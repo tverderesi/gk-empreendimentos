@@ -51,7 +51,7 @@ export default function Navbar() {
     <div className='navbar bg-[#1a1a1a] py-[1rem] sticky z-10'>
       <div className='navbar-start'>
         <a
-          className='btn btn-ghost normal-case h-full p-2 ml-4'
+          className='btn btn-ghost normal-case h-full p-2 ml-3'
           href='/'
         >
           <Logo />
