@@ -6,7 +6,7 @@ export function ListItems({ children }: any) {
   return (
     <ul
       className='menu w-[100vw] ml-4 mr-[-.5rem] mt-4  dropdown-content bg-[#1a1a1acc] backdrop-blur-xl  bg-blend-overlay flex flex-col justify-center'
-      style={{ height: 'calc(100vh - 85px)' }}
+      style={{ height: 'calc(60vh - 85px)' }}
     >
       {children}
     </ul>
