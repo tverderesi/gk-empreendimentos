@@ -1,55 +1,13 @@
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { Logo } from '../atoms/Logo';
-
-export function ListItems({ children }: any) {
-  return (
-    <ul
-      className='menu w-[100vw] ml-4 mr-[-.5rem] mt-4  dropdown-content bg-[#1a1a1acc] backdrop-blur-xl  bg-blend-overlay flex flex-col justify-center'
-      style={{ height: 'calc(60vh - 85px)' }}
-    >
-      {children}
-    </ul>
-  );
-}
-export function Dropdown({
-  type,
-  children,
-}: {
-  type: string;
-  children: JSX.Element;
-}) {
-  return (
-    <div className={`dropdown dropdown-${type} dropdown-bottom`}>
-      <label
-        tabIndex={0}
-        className='btn btn-ghost lg:hidden'
-      >
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          className='h-5 w-5'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth='2'
-            d='M4 6h16M4 12h8m-8 6h16'
-          />
-        </svg>
-      </label>
-      {children}
-    </div>
-  );
-}
+import { Dropdown } from './Dropdown';
 
 export default function Navbar() {
   const { menuItems, menuLinks } = useContext(AppContext);
   return (
-    <div className='navbar bg-[#1a1a1a] py-[1rem] sticky z-10'>
-      <div className='navbar-start'>
+    <div className='navbar bg-cadetblue-400 dark:bg-[#1a1a1a]/80 py-[1rem] sticky z-10'>
+      <div className='navbar-start min-w-[25%]'>
         <a
           className='btn btn-ghost normal-case h-full p-2 ml-3'
           href='/'
@@ -65,7 +23,7 @@ export default function Navbar() {
                 <li>
                   <a
                     href={`/${menuLinks[index]}`}
-                    className='btn btn-ghost text-xl h-full py-2 px-10 rounded-xl text-white tracking-wider font-medium'
+                    className='btn btn-ghost text-lg h-full py-2 px-2 rounded-xl text-white tracking-wider font-medium min-w-max'
                   >
                     {item}
                   </a>
@@ -77,22 +35,28 @@ export default function Navbar() {
       </div>
       <div className='navbar-end'>
         <Dropdown type='end'>
-          <ListItems>
-            <>
-              {menuItems.map((item: string, index: number) => {
-                return (
-                  <li>
-                    <a
-                      className='btn btn-ghost text-xl h-full py-10 px-4 rounded-xl text-white tracking-wider font-normal mr-2 ml-2'
-                      href={`/${menuLinks[index]}`}
-                    >
-                      {item}
-                    </a>
-                  </li>
-                );
-              })}
-            </>
-          </ListItems>
+          <>
+            <li>
+              <a
+                href={`/`}
+                className='btn btn-ghost text-xl h-full py-10 px-4 rounded-xl text-white tracking-wider font-normal mr-2 ml-2'
+              >
+                Home
+              </a>
+            </li>
+            {menuItems.map((item: string, index: number) => {
+              return (
+                <li>
+                  <a
+                    className='btn btn-ghost text-xl h-full py-10 px-4 rounded-xl text-white tracking-wider font-normal mr-2 ml-2'
+                    href={`/${menuLinks[index]}`}
+                  >
+                    {item}
+                  </a>
+                </li>
+              );
+            })}
+          </>
         </Dropdown>
       </div>
     </div>
