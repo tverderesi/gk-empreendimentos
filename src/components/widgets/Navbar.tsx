@@ -79,10 +79,13 @@ export default function Navbar() {
         <Dropdown type='end'>
           <ListItems>
             <>
-              {menuItems.map((item: string) => {
+              {menuItems.map((item: string, index: number) => {
                 return (
                   <li>
-                    <a className='btn btn-ghost text-xl h-full py-10 px-4 rounded-xl text-white tracking-wider font-normal mr-2 ml-2'>
+                    <a
+                      className='btn btn-ghost text-xl h-full py-10 px-4 rounded-xl text-white tracking-wider font-normal mr-2 ml-2'
+                      href={`/${menuLinks[index]}`}
+                    >
                       {item}
                     </a>
                   </li>
