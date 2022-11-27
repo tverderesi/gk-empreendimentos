@@ -1,6 +1,6 @@
 export default function Grid() {
   return (
-    <div className='flex flex-col lg:flex-row mt-[150px] items-center lg:justify-center self-center justify-self-center relative z-[3] gap-y-5 my-auto lg:p-10 lg:gap-10 mx-auto min-w-screen min-h-screen'>
+    <div className='flex flex-col lg:flex-row items-center lg:justify-center self-center justify-self-center relative z-[3] gap-y-5 my-auto lg:p-10 lg:gap-10 mx-auto min-w-screen'>
       <GridItem />
       <GridItem />
       <GridItem />
