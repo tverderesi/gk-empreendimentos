@@ -1,10 +1,10 @@
-export function Logo() {
+export default function Logo({ className = '', shadow = false }) {
   return (
     <>
       <img
-        src={'./logos/logo_lettering.png'}
-        className='h-10'
+        src={shadow ? './logos/logo_shadow.png' : './logos/logo.png'}
         alt='GK Empreendimentos'
+        className={className}
       />
     </>
   );

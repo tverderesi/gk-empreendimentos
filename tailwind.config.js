@@ -25,5 +25,16 @@ module.exports = {
       },
     },
   },
+  daisyui: {
+    themes: [
+      {
+        gkdark: {
+          ...require('daisyui/src/colors/themes')['[data-theme=dark]'],
+          'primary': '#4ab5ba',
+          'accent': '#C3907F',
+        },
+      },
+    ],
+  },
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
 };

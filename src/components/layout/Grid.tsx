@@ -1,21 +1,67 @@
-export default function Grid() {
+import { Link } from 'react-router-dom';
+import Logo from '../atoms/Logo';
+
+export default function Grid({ population }: { population: any }) {
   return (
-    <div className='flex flex-col lg:flex-row items-center lg:justify-center self-center justify-self-center relative z-[3] gap-y-5 my-auto lg:p-10 lg:gap-10 mx-auto min-w-screen'>
-      <GridItem />
-      <GridItem />
-      <GridItem />
-      <GridItem />
-      <GridItem />
-      <GridItem />
-      <GridItem />
-      <GridItem />
+    <div className='flex flex-col lg:flex-row items-center lg:justify-center relative z-[3] gap-y-5 mt-0 lg:p-10 lg:gap-10 mx-auto min-w-screen'>
+      {population.map((item: any) => {
+        return (
+          <GridItem
+            name={item.buildingName}
+            link={item.buildingLink}
+            imageURL={item.buildingImage}
+            logoURL={item.buildingLogo}
+          />
+        );
+      })}
     </div>
   );
 }
-function GridItem() {
+function GridItem({
+  name,
+  link,
+  imageURL = '',
+  logoURL = '',
+}: {
+  name: any;
+  link: any;
+  imageURL?: any;
+  logoURL?: any;
+}) {
   return (
-    <div className=' w-full h-full min-h-[20rem] min-w-[20rem] lg:h-96 lg:w-96 bg-cadetblue-600/50 flex items-center text-5xl text-primary-content justify-center rounded-xl drop-shadow-xl backdrop-blur-xl'>
-      Zero
-    </div>
+    <Link to={`/${link}`}>
+      <div
+        className={`relative w-80 ${
+          imageURL ? 'h-80' : 'h-36'
+        } p-3 lg:h-96 lg:w-96 bg-cadetblue-600 flex items-center  text-primary-content justify-center rounded-xl drop-shadow-xl  text-center`}
+      >
+        {imageURL ? (
+          <div className='absolute top-0   w-full h-full'>
+            <img
+              src={imageURL}
+              alt={name}
+              className='p-0 absolute  w-full h-full justify-self-center self-center object-cover   rounded-xl drop-shadow-xl'
+            />
+            <div className='pt-2 absolute bottom-0  bg-slate-900/50 rounded-xl rounded-t-none'>
+              <img
+                src={logoURL}
+                alt={name}
+                className='w-4/5 mx-auto mb-5'
+              />
+            </div>
+          </div>
+        ) : (
+          <>
+            <p className='z-[1] absolute  uppercase text-3xl lg:text-5xl tracking-wider lg:leading-relaxed font-semibold'>
+              {name}
+            </p>
+            <Logo
+              shadow={true}
+              className='z-[0] h-[90%] lg:w-[70%] opacity-10 relative'
+            />
+          </>
+        )}
+      </div>
+    </Link>
   );
 }
