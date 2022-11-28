@@ -20,6 +20,6 @@
   ],
   "start_url": "https://gk-empreendimentos.vercel.app",
   "display": "standalone",
-  "theme_color": "#a1a1a1",
-  "background_color": "#a1a1a1"
+  "theme_color": "#1a1a1a",
+  "background_color": "#1a1a1a"
 }
