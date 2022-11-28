@@ -5,23 +5,27 @@ const AppContext = createContext({} as any);
 
 export const AppProvider = ({ children }: { children?: ReactNode }) => {
   const lumina = {
-    buildingName: 'Lumina',
-    buildingLink: 'lumina',
-    buildingImage: './buildings/lumina/lumina.jpg',
-    buildingLogo: './buildings/lumina/logo.png',
+    building: true,
+    title: 'Lumina',
+    link: 'lumina',
+    image: './buildings/lumina/lumina.jpg',
+    logo: './buildings/lumina/logo.png',
   };
+
   const thirdParty = {
-    buildingName: 'Imóveis de Terceiros',
-    buildingLink: 'terceiros',
-    buildingImage: '',
-    buildingLogo: '',
+    building: false,
+    title: 'Imóveis de Terceiros',
+    link: 'terceiros',
+    image: '',
+    logo: '',
   };
 
   const folders = {
-    buildingName: 'Folders e Tabelas',
-    buildingLink: 'folders',
-    buildingImage: '',
-    buildingLogo: '',
+    building: false,
+    title: 'Folders e Tabelas',
+    link: 'folders',
+    image: '',
+    logo: '',
   };
 
   const initialState = {

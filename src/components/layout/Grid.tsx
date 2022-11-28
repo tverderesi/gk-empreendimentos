@@ -7,10 +7,10 @@ export default function Grid({ population }: { population: any }) {
       {population.map((item: any) => {
         return (
           <GridItem
-            name={item.buildingName}
-            link={item.buildingLink}
-            imageURL={item.buildingImage}
-            logoURL={item.buildingLogo}
+            name={item.title}
+            link={item.link}
+            imageURL={item.image}
+            logoURL={item.logo}
           />
         );
       })}
@@ -36,7 +36,7 @@ function GridItem({
         } p-3 lg:h-96 lg:w-96 bg-cadetblue-600 flex items-center  text-primary-content justify-center rounded-xl drop-shadow-xl  text-center`}
       >
         {imageURL ? (
-          <div className='absolute top-0   w-full h-full'>
+          <div className='absolute top-0   w-full h-full '>
             <img
               src={imageURL}
               alt={name}
@@ -46,7 +46,7 @@ function GridItem({
               <img
                 src={logoURL}
                 alt={name}
-                className='w-4/5 mx-auto mb-5'
+                className='w-4/5 mx-auto mb-5 '
               />
             </div>
           </div>
@@ -57,7 +57,7 @@ function GridItem({
             </p>
             <Logo
               shadow={true}
-              className='z-[0] h-[90%] lg:w-[70%] opacity-10 relative'
+              className='z-[0] h-[90%] lg:h-auto lg:w-[70%] opacity-10 relative'
             />
           </>
         )}

@@ -1,13 +1,7 @@
 import Navbar from '../widgets/Navbar';
 import { BaseLayout } from './BaseLayout';
 
-export function PageLayout({
-  children,
-  population,
-}: {
-  children: JSX.Element;
-  population: any;
-}) {
+export function BuildingLayout({ children }: { children: JSX.Element }) {
   return (
     <BaseLayout>
       <>

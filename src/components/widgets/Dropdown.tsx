@@ -43,7 +43,7 @@ export function Dropdown({
         </svg>
       </label>
       <ul
-        className={` menu w-[100vw] ml-4 mr-[-.5rem] mt-4  dropdown-content bg-[#1a1a1acc] backdrop-blur-xl ${openState()} bg-blend-overlay flex flex-col justify-center`}
+        className={` menu w-[100vw] ml-4 mr-[-.5rem] mt-4  dropdown-content bg-[#1a1a1acc] backdrop-blur-xl ${openState()} bg-blend-overlay flex flex-col justify-center relative z-10`}
         style={{ height: 'calc(100vh - 85px)' }}
         onBlur={() => {
           setOpen(false);
