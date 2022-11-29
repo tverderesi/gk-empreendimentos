@@ -8,7 +8,7 @@ export default function Navbar() {
   const { population } = useContext(AppContext);
   const homeLink = '/tabelas';
   return (
-    <header className='navbar bg-cadetblue-400 dark:bg-[#1a1a1a]/80 backdrop-blur-xl py-[1rem] sticky w-full top-0 z-10'>
+    <header className='navbar bg-cadetblue-400 dark:bg-[#1a1a1a]/80 backdrop-blur-xl py-[1rem] sticky w-full top-0 z-10 h-24'>
       <div className='navbar-start min-w-[25%]'>
         <Link
           to={homeLink}

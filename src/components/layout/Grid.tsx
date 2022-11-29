@@ -3,8 +3,8 @@ import Logo from '../atoms/Logo';
 
 export default function Grid({ population }: { population: any }) {
   return (
-    <div className='flex flex-col lg:flex-row items-center justify-center mx-auto my-5 lg:mt-0 relative z-[3] gap-y-5  lg:p-10 lg:gap-10'>
-      {population.map((item: any) => {
+    <div className='flex flex-col lg:flex-row items-center justify-start lg:justify-center mx-auto py-5  lg:mt-0 relative z-[3] gap-y-5  lg:p-10 lg:gap-10'>
+      {population.map((item: any, idx: number) => {
         return (
           <GridItem
             name={item.title}
@@ -31,9 +31,9 @@ function GridItem({
   return (
     <Link to={`/${link}`}>
       <div
-        className={`relative w-80 ${
-          imageURL ? 'h-80' : 'h-36'
-        } p-3 lg:h-96 lg:w-96 bg-cadetblue-600 flex items-center  text-primary-content justify-center rounded-xl drop-shadow-xl  text-center`}
+        className={`relative w-[92vw] ${
+          imageURL ? 'h-[92vw]' : 'h-[46vw]'
+        } p-3 lg:h-96 lg:w-96 bg-cadetblue-600 flex items-center py-5 text-primary-content justify-center rounded-xl drop-shadow-xl  text-center`}
       >
         {imageURL ? (
           <div className='absolute top-0   w-full h-full '>
