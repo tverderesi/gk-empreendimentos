@@ -7,7 +7,11 @@ export default function Home() {
   const { population } = useContext(AppContext);
   return (
     <PageLayout population={population}>
-      <Grid population={population} />
+      <>
+        {' '}
+        {window.innerHeight} {window.innerWidth} {devicePixelRatio}
+        <Grid population={population} />
+      </>
     </PageLayout>
   );
 }

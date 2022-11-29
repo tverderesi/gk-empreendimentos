@@ -1,5 +1,4 @@
 import Navbar from '../widgets/Navbar';
-import { BaseLayout } from './BaseLayout';
 
 export function PageLayout({
   children,
@@ -9,16 +8,14 @@ export function PageLayout({
   population: any;
 }) {
   return (
-    <BaseLayout>
-      <>
-        <Navbar />
-        <main
-          className='lg:items-center flex lg:content-center my-auto overflow-x-hidden lg:overflow-x-scroll '
-          style={{ height: 'calc(100vh - 90px)' }}
-        >
-          {children}
-        </main>
-      </>
-    </BaseLayout>
+    <>
+      <Navbar />
+      <main
+        className='lg:items-center flex lg:content-center my-auto overflow-x-hidden lg:overflow-x-scroll '
+        style={{ height: 'calc(100vh - 90px)' }}
+      >
+        {children}
+      </main>
+    </>
   );
 }

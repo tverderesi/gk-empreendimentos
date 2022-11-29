@@ -47,7 +47,7 @@ export default function FloorGenerator({
         return (
           <div
             className={`flexitems-center bg-slate-900  btn-secondary justify-center absolute top-[48%] left-[40%]  z-[${
-              floor * 10
+              (floors - floor) * 10
             }] bg-cadetblue-300/[1%]`}
             style={{
               height: `${height}px`,

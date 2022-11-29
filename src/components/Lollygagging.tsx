@@ -5,14 +5,14 @@ export default function Lollygagging({ param }: { param: any }) {
   const width = 225;
 
   return (
-    <div>
-      <div className='h-full w-screen flex flex-col items-center justify-center relative z-[0] font-bold text-white'>
+    <section>
+      <div className='flex flex-col items-center justify-center relative z-[1] font-bold text-white'>
         <FloorGenerator
           floors={8}
           height={height}
           width={width}
         />
       </div>
-    </div>
+    </section>
   );
 }

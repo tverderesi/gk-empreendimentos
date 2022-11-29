@@ -30,11 +30,9 @@ function App() {
   return (
     <>
       <AppProvider>
-        <BaseLayout>
-          <>
-            <RouterProvider router={router} />
-          </>
-        </BaseLayout>
+        <>
+          <RouterProvider router={router} />
+        </>
       </AppProvider>
     </>
   );
