@@ -8,8 +8,6 @@ export default function Home() {
   return (
     <PageLayout population={population}>
       <>
-        {' '}
-        {window.innerHeight} {window.innerWidth} {devicePixelRatio}
         <Grid population={population} />
       </>
     </PageLayout>

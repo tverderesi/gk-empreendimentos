@@ -10,10 +10,7 @@ export function PageLayout({
   return (
     <>
       <Navbar />
-      <main
-        className='lg:items-center flex lg:content-center my-auto overflow-x-hidden lg:overflow-x-scroll '
-        style={{ height: 'calc(100vh - 90px)' }}
-      >
+      <main className='lg:items-center flex lg:content-center my-auto overflow-x-hidden lg:overflow-x-scroll'>
         {children}
       </main>
     </>

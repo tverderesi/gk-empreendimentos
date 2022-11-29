@@ -3,7 +3,7 @@ import Logo from '../atoms/Logo';
 
 export default function Grid({ population }: { population: any }) {
   return (
-    <div className='flex flex-col lg:flex-row items-center mt-5 mb-10 px-3 lg:justify-center relative z-[3] gap-y-5 lg:mt-0 lg:p-10 lg:gap-10 mx-auto min-w-screen'>
+    <div className='flex flex-col lg:flex-row items-center justify-center mx-auto my-5 lg:mt-0 relative z-[3] gap-y-5  lg:p-10 lg:gap-10'>
       {population.map((item: any) => {
         return (
           <GridItem
