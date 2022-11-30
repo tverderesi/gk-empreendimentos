@@ -26,7 +26,7 @@ export default function GridItem({
               alt={name}
               className='p-0 absolute  w-full h-full justify-self-center self-center object-cover   rounded-xl drop-shadow-xl'
             />
-            <div className='pt-2 absolute bottom-0  bg-slate-900/50 rounded-xl rounded-t-none'>
+            <div className='pt-2 absolute bottom-0 bg-gradient-to-t from-slate-900/50 to-transparent rounded-xl rounded-t-none'>
               <img
                 src={logoURL}
                 alt={name}
