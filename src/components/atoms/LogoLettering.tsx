@@ -1,4 +1,4 @@
-export function LogoLetters() {
+export default function LogoLetters() {
   return (
     <>
       <img

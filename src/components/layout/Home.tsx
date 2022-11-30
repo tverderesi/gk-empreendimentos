@@ -1,4 +1,4 @@
-import Grid from './Grid';
+import Grid from '../widgets/Grid';
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { PageLayout } from './PageLayout';

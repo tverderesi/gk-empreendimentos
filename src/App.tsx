@@ -1,11 +1,8 @@
-import { BaseLayout } from './components/layout/BaseLayout';
 import Home from './components/layout/Home';
 import ClientHome from './components/layout/ClientHome';
 import { AppProvider } from './context/AppContext';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { BuildingLayout } from './components/layout/BuildingLayout';
-
-import Lollygagging from './components/Lollygagging';
+import Building from './components/routes/Building';
 
 const host = window.location.host;
 const subdomain = host.split('.')[0];
@@ -17,13 +14,12 @@ const router = createBrowserRouter([
   },
   {
     path: '/:menuLinks',
-    element: (
-      <BuildingLayout>
-        <Lollygagging param={window.location.pathname.split('/')} />
-      </BuildingLayout>
-    ),
+    element: <Building param={window.location.pathname.slice(1)} />,
   },
-  { path: '/tabelas', element: <Home /> },
+  {
+    path: '/tabelas',
+    element: <Home />,
+  },
 ]);
 
 function App() {

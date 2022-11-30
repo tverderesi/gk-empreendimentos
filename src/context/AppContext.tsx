@@ -6,7 +6,7 @@ const AppContext = createContext({} as any);
 export const AppProvider = ({ children }: { children?: ReactNode }) => {
   const lumina = {
     building: true,
-    title: 'Lumina',
+    title: 'lumina',
     link: 'lumina',
     image: './buildings/lumina/lumina.jpg',
     logo: './buildings/lumina/logo.png',

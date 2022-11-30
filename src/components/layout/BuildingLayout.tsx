@@ -1,7 +1,11 @@
 import Navbar from '../widgets/Navbar';
-import { BaseLayout } from './BaseLayout';
+import BaseLayout from './BaseLayout';
 
-export function BuildingLayout({ children }: { children: JSX.Element }) {
+export default function BuildingLayout({
+  children,
+}: {
+  children: JSX.Element;
+}) {
   return (
     <BaseLayout>
       <>
