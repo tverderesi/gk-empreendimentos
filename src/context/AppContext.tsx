@@ -30,12 +30,15 @@ export const AppProvider = ({ children }: { children?: ReactNode }) => {
 
   const initialState = {
     population: [lumina, thirdParty, folders],
+    link: '',
   };
 
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, dispatch }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 

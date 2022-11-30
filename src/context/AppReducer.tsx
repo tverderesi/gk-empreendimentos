@@ -6,5 +6,8 @@ export const AppReducer = (state: any, action: any) => {
     case 'POPULATE': {
       return { ...state, population: action.payload };
     }
+    case 'GET_LINK': {
+      return { ...state, link: action.payload };
+    }
   }
 };

@@ -5,7 +5,7 @@ import AppContext from '../../context/AppContext';
 import { useEffect, useState } from 'react';
 
 export default function Navbar() {
-  const { population } = useContext(AppContext);
+  const { population, dispatch } = useContext(AppContext);
 
   const homeLink = '/tabelas';
 
@@ -21,12 +21,20 @@ export default function Navbar() {
     return open ? '' : 'hidden';
   };
 
+  const handleClick = (e: React.SyntheticEvent) => {
+    dispatch({
+      type: 'GET_LINK',
+      payload: e.currentTarget.getAttribute('href')?.slice(1),
+    });
+  };
+
   return (
     <header className='navbar bg-cadetblue-400 dark:bg-[#1a1a1a]/80 backdrop-blur-xl py-[1rem] sticky w-full top-0 z-10 h-24'>
       <div className='navbar-start min-w-[25%]'>
         <NavLink
           to={homeLink}
           className='btn btn-ghost normal-case h-full p-2 ml-3'
+          onClick={handleClick}
         >
           <LogoLetters />
         </NavLink>
@@ -40,6 +48,7 @@ export default function Navbar() {
                   <NavLink
                     to={`/${item.link}`}
                     className='btn btn-ghost text-lg h-full py-3 px-3 rounded-xl text-white tracking-wider font-medium min-w-max mx-2'
+                    onClick={handleClick}
                   >
                     {item.title}
                   </NavLink>
@@ -84,6 +93,7 @@ export default function Navbar() {
               <Link
                 to={homeLink}
                 className='btn btn-ghost text-xl h-full py-10 px-4 rounded-xl text-white tracking-wider font-normal mr-2 ml-2'
+                onClick={handleClick}
               >
                 Home
               </Link>
@@ -94,7 +104,10 @@ export default function Navbar() {
                   <Link
                     to={`/${item.link}`}
                     className='btn btn-ghost text-xl h-full py-10 px-4 rounded-xl text-white tracking-wider font-normal mr-2 ml-2'
-                    onClick={() => setOpen(false)}
+                    onClick={e => {
+                      handleClick(e);
+                      setOpen(false);
+                    }}
                   >
                     {item.title}
                   </Link>

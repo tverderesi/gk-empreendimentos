@@ -3,7 +3,7 @@ import BuildingLayout from '../layout/BuildingLayout';
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 
-export default function Lollygagging({ param }: { param: any }) {
+export default function Building({ param }: { param: any }) {
   const { population } = useContext(AppContext);
 
   const getItem = (population: any) => {
