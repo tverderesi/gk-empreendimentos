@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import Logo from '../atoms/Logo';
+import { useContext } from 'react';
+import AppContext from '../../context/AppContext';
 
 export default function GridItem({
   name,
@@ -12,12 +14,21 @@ export default function GridItem({
   imageURL?: any;
   logoURL?: any;
 }) {
+  const { dispatch } = useContext(AppContext);
+
+  const handleClick = (e: React.SyntheticEvent) => {
+    dispatch({
+      type: 'GET_LINK',
+      payload: e.currentTarget.getAttribute('href')?.slice(1),
+    });
+  };
   return (
     <Link to={`/${link}`}>
       <div
         className={`relative w-[92vw] ${
           imageURL ? 'h-[92vw]' : 'h-[46vw]'
         } p-3 lg:h-96 lg:w-96 bg-cadetblue-600 flex items-center py-5 text-primary-content justify-center rounded-xl drop-shadow-xl  text-center`}
+        onClick={handleClick}
       >
         {imageURL ? (
           <div className='absolute top-0   w-full h-full '>
