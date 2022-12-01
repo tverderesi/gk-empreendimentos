@@ -26,10 +26,10 @@ export default function GenericRoute({ param }: { param: any }) {
 export function Building({ item }: { item: any }) {
   return (
     <BuildingLayout>
-      <div className='flex flex-col items-center min-w-[100vw] justify-start min-h-[calc(100vh-6rem)] mt-2 lg:mt-10'>
+      <div className='flex flex-col items-center min-w-[100vw] justify-start min-h-[calc(100vh-6rem)] 0 lg:mt-10'>
         <section
           key='OverviewCard'
-          className=' w-[95vw] lg:w-[98vw] h-full p-2 lg:p-4 rounded-xl drop-shadow-2xl  bg-[#1a1a1a] z-[5] flex flex-col lg:flex-row items-center '
+          className=' w-screen lg:w-[98vw] h-full p-2 lg:p-4 lg:rounded-xl lg:drop-shadow-2xl  bg-[#1a1a1a] z-[5] flex flex-col lg:flex-row items-center '
         >
           <div
             key='overviewCardImage'
