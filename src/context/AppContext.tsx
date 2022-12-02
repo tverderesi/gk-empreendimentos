@@ -10,6 +10,26 @@ export const AppProvider = ({ children }: { children?: ReactNode }) => {
     link: 'lumina',
     image: './buildings/lumina/lumina.jpg',
     logo: './buildings/lumina/logo.png',
+    shape: [
+      {
+        title: 'Torre A',
+        availability: {
+          'total': 100,
+          'available': 33,
+          'negotiation': 33,
+          'unavailable': 33,
+        },
+      },
+      {
+        title: 'Torre B',
+        availability: {
+          'total': 90,
+          'available': 42,
+          'negotiation': 23,
+          'unavailable': 25,
+        },
+      },
+    ],
   };
 
   const thirdParty = {
