@@ -13,6 +13,7 @@ export const AppProvider = ({ children }: { children?: ReactNode }) => {
     shape: [
       {
         title: 'Torre A',
+
         availability: {
           'total': 100,
           'available': 33,
