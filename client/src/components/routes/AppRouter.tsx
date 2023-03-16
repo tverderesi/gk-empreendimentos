@@ -3,14 +3,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../../pages/Home";
 
 import { NotFound } from "../../pages/NotFound";
-import Navbar from "../widgets/Navbar";
+
 import { PageLayout } from "../layout/PageLayout";
-import GenericRoute from "./GenericRoute";
 
 export function AppRouter() {
-  const host = window.location.host;
-  const subdomain = host.split(".")[0];
-  console.log(typeof subdomain);
+  let subdomain = "";
+
+  if (process.env.NODE_ENV === "production") {
+    subdomain = "tabelas";
+  } else {
+    const host = window.location.host;
+    subdomain = host.split(".")[0];
+  }
+
   if (subdomain === "tabelas")
     return (
       <Router>
