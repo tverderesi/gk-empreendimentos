@@ -1,20 +1,18 @@
-import { BackgroundImage } from '../atoms/BackgroundImage';
-import Navbar from '../widgets/Navbar';
+import { Outlet } from "react-router-dom";
+import { BackgroundImage } from "../atoms/BackgroundImage";
 
-export function PageLayout({
-  children,
-  population,
-}: {
-  children: JSX.Element;
-  population: any;
-}) {
+import Navbar from "../widgets/Navbar";
+
+export function PageLayout() {
   return (
     <>
       <Navbar />
-      <main className='lg:items-center flex lg:content-center my-auto overflow-x-hidden lg:overflow-x-scroll h-auto lg:h-[calc(100%-6rem)]'>
-        {children}
-      </main>
-      <BackgroundImage />
+
+      <Outlet />
+
+      <footer>
+        <BackgroundImage />
+      </footer>
     </>
   );
 }

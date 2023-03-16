@@ -1,9 +1,17 @@
-import GridItem from './GridItem';
+import { useContext } from "react";
+import AppContext from "../../context/AppContext";
+import GridItem from "./GridItem";
 
 export default function Grid({ population }: { population: any }) {
+  const { menuOpen } = useContext(AppContext);
   return (
-    <div className='flex flex-col lg:flex-row items-center justify-start lg:justify-center mx-auto py-5  lg:mt-0 relative z-[3] gap-y-5  lg:p-10 lg:gap-10'>
-      {population.map((item: any, idx: number) => {
+    <div
+      className={`grid gap-5 overflow-x-hidden items-center
+ ${
+   menuOpen ? "overflow-y-hidden" : "overflow-y-scroll"
+ } grid-cols-[9rem_9rem] py-10 lg:grid-cols-3 lg:gap-10 grid-flow-row z-[3]`}
+    >
+      {population.map((item: any) => {
         return (
           <GridItem
             name={item.title}

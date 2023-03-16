@@ -1,33 +1,33 @@
-import { createContext, ReactNode, useReducer } from 'react';
-import { AppReducer } from './AppReducer';
+import { createContext, ReactNode, useReducer, useState } from "react";
+import { AppReducer } from "./AppReducer";
 
 const AppContext = createContext({} as any);
 
 export const AppProvider = ({ children }: { children?: ReactNode }) => {
   const lumina = {
     building: true,
-    title: 'lumina',
-    link: 'lumina',
-    image: './buildings/lumina/lumina.jpg',
-    logo: './buildings/lumina/logo.png',
+    title: "lumina",
+    link: "lumina",
+    image: "./buildings/lumina/lumina.jpg",
+    logo: "./buildings/lumina/logo.png",
     shape: [
       {
-        title: 'Torre A',
+        title: "Torre A",
 
         availability: {
-          'total': 100,
-          'available': 33,
-          'negotiation': 33,
-          'unavailable': 33,
+          total: 100,
+          available: 33,
+          negotiation: 33,
+          unavailable: 33,
         },
       },
       {
-        title: 'Torre B',
+        title: "Torre B",
         availability: {
-          'total': 90,
-          'available': 42,
-          'negotiation': 23,
-          'unavailable': 25,
+          total: 90,
+          available: 42,
+          negotiation: 23,
+          unavailable: 25,
         },
       },
     ],
@@ -35,23 +35,37 @@ export const AppProvider = ({ children }: { children?: ReactNode }) => {
 
   const thirdParty = {
     building: false,
-    title: 'Imóveis de Terceiros',
-    link: 'terceiros',
-    image: '',
-    logo: '',
+    title: "Imóveis de Terceiros",
+    link: "terceiros",
+    image: "",
+    logo: "",
   };
 
   const folders = {
     building: false,
-    title: 'Folders e Tabelas',
-    link: 'folders',
-    image: '',
-    logo: '',
+    title: "Folders e Tabelas",
+    link: "folders",
+    image: "",
+    logo: "",
   };
 
   const initialState = {
-    population: [lumina, thirdParty, folders],
-    link: '',
+    population: [
+      lumina,
+      thirdParty,
+      folders,
+      lumina,
+      lumina,
+      thirdParty,
+      folders,
+      lumina,
+      lumina,
+      thirdParty,
+      folders,
+      lumina,
+    ],
+    link: "",
+    menuOpen: false,
   };
 
   const [state, dispatch] = useReducer(AppReducer, initialState);
