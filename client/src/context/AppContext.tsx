@@ -33,37 +33,8 @@ export const AppProvider = ({ children }: { children?: ReactNode }) => {
     ],
   };
 
-  const thirdParty = {
-    building: false,
-    title: "Imóveis de Terceiros",
-    link: "terceiros",
-    image: "",
-    logo: "",
-  };
-
-  const folders = {
-    building: false,
-    title: "Folders e Tabelas",
-    link: "folders",
-    image: "",
-    logo: "",
-  };
-
   const initialState = {
-    population: [
-      lumina,
-      thirdParty,
-      folders,
-      lumina,
-      lumina,
-      thirdParty,
-      folders,
-      lumina,
-      lumina,
-      thirdParty,
-      folders,
-      lumina,
-    ],
+    population: [lumina],
     link: "",
     menuOpen: false,
   };

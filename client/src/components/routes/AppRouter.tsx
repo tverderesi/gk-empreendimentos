@@ -6,6 +6,7 @@ import { NotFound } from "../../pages/NotFound";
 import ClientHome from "../layout/ClientHome";
 
 import { PageLayout } from "../layout/PageLayout";
+import { Building } from "../../pages/Building";
 
 export function AppRouter() {
   if (process.env.NODE_ENV === "production") {
@@ -37,6 +38,12 @@ export function AppRouter() {
         <Routes>
           <Route path="/" element={<PageLayout />} errorElement={<NotFound />}>
             <Route path="/" element={<Home />} errorElement={<NotFound />} />
+            <Route
+              path="/:link"
+              //prettier-ignore
+              element={<Building />}
+              errorElement={<NotFound />}
+            />
             <Route
               path="*"
               element={<NotFound />}
