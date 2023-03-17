@@ -25,7 +25,7 @@ export default function GridItem({
   return (
     <Link
       to={`/${link}`}
-      className={`transition-all relative col-1 p-3 h-36 w-36 lg:h-72 lg:w-72  bg-cadetblue-600 flex items-center text-primary-content justify-center rounded-xl drop-shadow-lg  text-center`}
+      className={`transition-all relative col-1 p-3 h-[calc((100vw-5rem)/2)] w-[calc(50vw-2.5rem)] md:h-[calc((100vw-5rem)/3)] md:w-[calc((100vw-5rem)/3)] lg:h-72 lg:w-72  bg-cadetblue-600 flex items-center text-primary-content justify-center rounded-xl drop-shadow-lg  text-center`}
       onClick={handleClick}
     >
       {imageURL ? (
@@ -41,13 +41,10 @@ export default function GridItem({
         </div>
       ) : (
         <>
-          <p className="z-[1] absolute  uppercase text-xl lg:text-4xl tracking-wider lg:leading-relaxed font-semibold px-5">
+          <p className="z-[1] absolute  uppercase text-xl md:text-3xl lg:text-4xl tracking-wider lg:leading-relaxed font-semibold px-5">
             {name}
           </p>
-          <Logo
-            shadow={true}
-            className="z-[0] h-[90%] lg:h-auto lg:w-[70%] opacity-10 relative"
-          />
+          <Logo shadow={true} className="z-[0] p-6 opacity-10 relative" />
         </>
       )}
     </Link>

@@ -6,10 +6,9 @@ export default function Grid({ population }: { population: any }) {
   const { menuOpen } = useContext(AppContext);
   return (
     <div
-      className={`grid gap-5 overflow-x-hidden items-center
- ${
-   menuOpen ? "overflow-y-hidden" : "overflow-y-scroll"
- } grid-cols-[9rem_9rem] py-10 lg:grid-cols-3 lg:gap-10 grid-flow-row z-[3]`}
+      //prettier-ignore
+      className={`overflow-x-hidden flex flex-row items-center justify-center flex-wrap ${menuOpen ? "overflow-y-hidden" : "overflow-y-scroll"}  
+      gap-5 py-10 px-5 lg:gap-10 grid-flow-row z-[3]`}
     >
       {population.map((item: any) => {
         return (

@@ -8,7 +8,7 @@ export default function Home() {
     <main
       className={`mt-24 flex justify-center w-screen  h-[calc(100vh-6rem)]  mx-auto transition-all`}
     >
-      <Grid population={population}></Grid>
+      <Grid population={population} />
     </main>
   );
 }

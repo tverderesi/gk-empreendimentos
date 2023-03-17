@@ -3,20 +3,35 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../../pages/Home";
 
 import { NotFound } from "../../pages/NotFound";
+import ClientHome from "../layout/ClientHome";
 
 import { PageLayout } from "../layout/PageLayout";
 
 export function AppRouter() {
-  let subdomain = "";
-
   if (process.env.NODE_ENV === "production") {
-    subdomain = "tabelas";
-  } else {
-    const host = window.location.host;
-    subdomain = host.split(".")[0];
-  }
-
-  if (subdomain === "tabelas")
+    return (
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={<ClientHome />}
+            errorElement={<NotFound />}
+          />
+          <Route
+            path="/tabelas"
+            element={<PageLayout />}
+            errorElement={<NotFound />}
+          >
+            <Route
+              path="/tabelas/"
+              element={<Home />}
+              errorElement={<NotFound />}
+            />
+          </Route>
+        </Routes>
+      </Router>
+    );
+  } else if (window.location.host.split(".")[0] === "tabelas") {
     return (
       <Router>
         <Routes>
@@ -31,7 +46,7 @@ export function AppRouter() {
         </Routes>
       </Router>
     );
-  else
+  } else {
     return (
       <Router>
         <Routes>
@@ -39,4 +54,5 @@ export function AppRouter() {
         </Routes>
       </Router>
     );
+  }
 }
