@@ -28,6 +28,17 @@ export function AppRouter() {
               element={<Home />}
               errorElement={<NotFound />}
             />
+            <Route
+              path="/tabelas/:link"
+              //prettier-ignore
+              element={<Building />}
+              errorElement={<NotFound />}
+            />
+            <Route
+              path="*"
+              element={<NotFound />}
+              errorElement={<NotFound />}
+            />
           </Route>
         </Routes>
       </Router>

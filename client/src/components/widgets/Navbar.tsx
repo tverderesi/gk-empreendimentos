@@ -6,7 +6,7 @@ import { MobileMenu } from "./MobileMenu";
 
 export default function Navbar() {
   const { population, menuOpen, dispatch } = useContext(AppContext);
-  console.log(population.length > 5);
+
   const handleClick = () => {
     dispatch({ type: "CLOSE_MENU" });
   };
@@ -79,6 +79,24 @@ export default function Navbar() {
               );
             })
           )}
+          <li>
+            <NavLink
+              to="/folders"
+              className="text-2xl py-5 text-white tracking-wider font-light uppercase"
+              onClick={handleClick}
+            >
+              Folders e Tabelas
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/terceiros"
+              className="text-2xl mb-10  pt-5 text-white tracking-wider font-light uppercase"
+              onClick={handleClick}
+            >
+              Imóveis de Terceiros
+            </NavLink>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
