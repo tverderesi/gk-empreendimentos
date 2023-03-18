@@ -23,3 +23,15 @@ export type ItemsListType = ({
   population: any;
   handleClick: any;
 }) => JSX.Element;
+
+export type GridItemType = ({
+  name,
+  link,
+  imageURL,
+  logoURL,
+}: {
+  name: any;
+  link: any;
+  imageURL?: any;
+  logoURL?: any;
+}) => JSX.Element;

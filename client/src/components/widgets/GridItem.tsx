@@ -2,18 +2,14 @@ import { Link } from "react-router-dom";
 import Logo from "../atoms/Logo";
 import { useContext } from "react";
 import AppContext from "../../context/AppContext";
+import { GridItemType } from "../../Types";
 
-export default function GridItem({
+export const GridItem: GridItemType = ({
   name,
   link,
   imageURL = "",
   logoURL = "",
-}: {
-  name: any;
-  link: any;
-  imageURL?: any;
-  logoURL?: any;
-}) {
+}) => {
   const { dispatch } = useContext(AppContext);
 
   const handleClick = (e: React.SyntheticEvent) => {
@@ -49,4 +45,4 @@ export default function GridItem({
       )}
     </Link>
   );
-}
+};

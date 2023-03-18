@@ -1,8 +1,12 @@
 import { useContext } from "react";
 import AppContext from "../../context/AppContext";
-import GridItem from "./GridItem";
+import { GridItemType } from "../../Types";
 
-export default function Grid({ population }: { population: any }) {
+export default function Grid({
+  children,
+}: {
+  children: React.ReactElement<GridItemType>[];
+}) {
   const { menuOpen } = useContext(AppContext);
   return (
     <div
@@ -10,16 +14,7 @@ export default function Grid({ population }: { population: any }) {
       className={`overflow-x-hidden flex flex-row items-center justify-center flex-wrap ${menuOpen ? "overflow-y-hidden" : "overflow-y-scroll"}  
       gap-5 py-10 px-5 lg:gap-10 grid-flow-row z-[3]`}
     >
-      {population.map((item: any) => {
-        return (
-          <GridItem
-            name={item.title}
-            link={item.link}
-            imageURL={item.image}
-            logoURL={item.logo}
-          />
-        );
-      })}
+      {children}
     </div>
   );
 }

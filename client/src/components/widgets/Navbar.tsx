@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import AppContext from "../../context/AppContext";
 import { MobileMenu } from "./MobileMenu";
+import { ListDropDown } from "../atoms/ListDropDown";
 
 export default function Navbar() {
   const { population, menuOpen, dispatch } = useContext(AppContext);
@@ -38,33 +39,19 @@ export default function Navbar() {
             </NavLink>
           </li>
           {population.length > 5 ? (
-            <li tabIndex={0}>
-              <a className="uppercase tracking-wider rounded-2xl">
-                Empreendimentos
-                <svg
-                  className="fill-current transition-all rotation"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                </svg>
-              </a>
-              <ul className="p-2 bg-gradient-to-r from-[#1e2627fa] via-[#1d2223ff] to-[#1e2627fa] transition-all slide-in-top blur-edge w-full h-auto rounded-2xl justify-center backdrop-blur-3xl">
-                {population.map((item: any) => {
-                  return (
-                    <li className="w-full flex justify-center text-center">
-                      <NavLink to={`/${item.link}`} className="rounded-xl">
-                        <span className="text-lg uppercase tracking-wide mx-auto">
-                          {item.title}
-                        </span>
-                      </NavLink>
-                    </li>
-                  );
-                })}
-              </ul>
-            </li>
+            <ListDropDown>
+              <>Empreendimentos</>
+
+              {population.map((item: any) => {
+                return (
+                  <NavLink to={`/${item.link}`} className="rounded-xl">
+                    <span className="text-lg uppercase tracking-wide mx-auto">
+                      {item.title}
+                    </span>
+                  </NavLink>
+                );
+              })}
+            </ListDropDown>
           ) : (
             population.map((item: any) => {
               return (
@@ -79,24 +66,23 @@ export default function Navbar() {
               );
             })
           )}
-          <li>
+          <ListDropDown>
+            <>Outros</>
             <NavLink
               to="/folders"
-              className="text-2xl py-5 text-white tracking-wider font-light uppercase"
+              className=" rounded-xl text-lg  mb-1 py-3 px-3  uppercase  tracking-wider font-medium "
               onClick={handleClick}
             >
               Folders e Tabelas
             </NavLink>
-          </li>
-          <li>
             <NavLink
               to="/terceiros"
-              className="text-2xl mb-10  pt-5 text-white tracking-wider font-light uppercase"
+              className="text-lg rounded-xl   py-3 px-3 uppercase  tracking-wider font-medium "
               onClick={handleClick}
             >
               Imóveis de Terceiros
             </NavLink>
-          </li>
+          </ListDropDown>
         </ul>
       </div>
       <div className="navbar-end">
