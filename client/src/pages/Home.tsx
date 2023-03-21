@@ -6,7 +6,7 @@ export default function Home() {
   const { population } = useContext(AppContext);
   return (
     <main
-      className={`mt-24 flex justify-center items-start w-screen  h-[calc(100vh-6rem)]  mx-auto transition-all`}
+      className={`mt-24 flex justify-center items-start md:items-center w-screen  h-[calc(100vh-6rem)]  mx-auto transition-all`}
     >
       <Grid>
         {population.map((item: any) => {
