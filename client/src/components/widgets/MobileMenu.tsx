@@ -11,10 +11,10 @@ export const MobileMenu: MobileMenuType = ({
   handleMenuToggle,
 }) => {
   const { population, menuOpen } = useContext(AppContext);
-  console.log(population.length);
+
   const classes = `${
     menuOpen ? "flex flex-col" : "hidden"
-  } overflow-y-scroll bg-gradient-to-r from-[#1e2627fa] via-[#1d2223ff] to-[#1e2627fa] w-screen h-[calc(100vh-6rem)] backdrop-blur-xl bg-blend-overlay 
+  } overflow-y-scroll bg-[#1a1a1afb] w-screen h-[calc(100vh-6rem)] backdrop-blur-xl bg-blend-overlay 
   items-center absolute top-24 left-0`;
   return (
     <>

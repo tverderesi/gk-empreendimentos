@@ -32,7 +32,7 @@ export default function Navbar() {
           <li>
             <NavLink
               to="/"
-              className="btn btn-ghost-primary text-lg  py-3 px-3 rounded-xl uppercase  tracking-wider font-medium min-w-max mx-2"
+              className="btn btn-ghost btn-ghost-primary text-lg  py-3 px-3 rounded-xl uppercase  tracking-wider font-medium min-w-max mx-2"
               onClick={handleClick}
             >
               Home
@@ -44,7 +44,11 @@ export default function Navbar() {
 
               {population.map((item: any) => {
                 return (
-                  <NavLink to={`/${item.link}`} className="rounded-xl">
+                  <NavLink
+                    to={`/${item.link}`}
+                    className="rounded-xl"
+                    key={item.link}
+                  >
                     <span className="text-lg uppercase tracking-wide mx-auto">
                       {item.title}
                     </span>
@@ -55,10 +59,10 @@ export default function Navbar() {
           ) : (
             population.map((item: any) => {
               return (
-                <li>
+                <li key={item.link}>
                   <NavLink
                     to={`/${item.link}`}
-                    className="btn btn-ghost-primary text-lg  py-3 px-3 rounded-xl uppercase  tracking-wider font-medium min-w-max mx-2"
+                    className="btn btn-ghost btn-ghost-primary text-lg  py-3 px-3 rounded-xl uppercase  tracking-wider font-medium min-w-max mx-2"
                   >
                     {item.title}
                   </NavLink>

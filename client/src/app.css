@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,6 +13,10 @@ body {
 
 li:hover > a > svg.rotation {
   transform: rotate(180deg);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
 .slide-in-top {
@@ -29,7 +33,7 @@ li:hover > a > svg.rotation {
 }
 
 .custom-navbar {
-  @apply navbar bg-cadetblue-400 dark:bg-[#1a1a1a]/80 backdrop-blur-xl py-[1rem] fixed w-full top-0 z-10 h-24 drop-shadow-xl;
+  @apply navbar bg-cadetblue-400 dark:bg-[#1a1a1a]/80 backdrop-blur-xl py-[1rem] fixed w-full top-0 z-[100] h-24 drop-shadow-xl;
 }
 
 .nav-link {
@@ -38,6 +42,7 @@ li:hover > a > svg.rotation {
 
 .btn-ghost-primary:hover {
   @apply btn-ghost;
+
   @apply bg-primary-focus !important;
   @apply text-white;
 }

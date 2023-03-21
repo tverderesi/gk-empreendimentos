@@ -1,7 +1,7 @@
 export const ListDropDown = ({ children }) => {
   return (
     <li tabIndex={0}>
-      <a className="uppercase btn text-lg font-medium btn-ghost-primary tracking-wider rounded-2xl">
+      <a className="uppercase btn text-lg font-medium btn-ghost btn-ghost-primary tracking-wider rounded-2xl">
         {children[0]}
         <svg
           className="fill-current transition-all rotation"
@@ -14,8 +14,8 @@ export const ListDropDown = ({ children }) => {
         </svg>
       </a>
       <ul className="p-2 bg-gradient-to-r from-[#1e2627fa] via-[#1d2223ff] to-[#1e2627fa] transition-all slide-in-top blur-edge min-w-full h-auto rounded-2xl justify-center backdrop-blur-3xl">
-        {children.slice(1).map((child) => {
-          return <li>{child}</li>;
+        {children.slice(1).map((child, idx) => {
+          return <li key={`li${idx}`}>{child}</li>;
         })}
       </ul>
     </li>
