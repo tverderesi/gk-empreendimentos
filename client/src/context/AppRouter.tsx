@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from "../../pages/Home";
+import Home from "../pages/Home";
 
-import { NotFound } from "../../pages/NotFound";
-import ClientHome from "../layout/ClientHome";
+import { NotFound } from "../pages/NotFound";
+import ClientHome from "../components/layout/ClientHome";
 
-import { PageLayout } from "../layout/PageLayout";
-import { Building } from "../../pages/Building";
+import { PageLayout } from "../components/layout/PageLayout";
+import { Building } from "../pages/Building";
 
 export function AppRouter() {
   if (process.env.NODE_ENV === "production") {

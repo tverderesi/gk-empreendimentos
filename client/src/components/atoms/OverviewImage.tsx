@@ -1,8 +1,4 @@
-type OverviewImageType = ({
-  item: { image, title, logo },
-}: {
-  item: { image: string; title: string; logo: string };
-}) => JSX.Element;
+import { OverviewImageType } from "../../Types";
 
 export const OverviewImage: OverviewImageType = ({
   item: { image, title, logo },

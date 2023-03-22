@@ -1,4 +1,4 @@
-import { AppRouter } from "./components/routes/AppRouter";
+import { AppRouter } from "./context/AppRouter";
 import { AppProvider } from "./context/AppContext";
 import "./app.css";
 function App() {

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
-import { OverviewImage } from "../components/widgets/OverviewImage";
+import { OverviewImage } from "../components/atoms/OverviewImage";
 import AppContext from "../context/AppContext";
 import { getGoogleMapsLink, getMonthYear } from "../utils/buildingUtils";
 import { InfoPanel } from "../components/atoms/InfoPanel";
@@ -10,7 +10,6 @@ import { Availability } from "../components/widgets/Availability";
 export function Building() {
   const { link } = useParams();
   const { population } = useContext(AppContext);
-  const [tower, setTower] = useState(0);
 
   const building = population.find((building: any) => building.link === link);
 

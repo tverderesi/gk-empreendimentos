@@ -35,3 +35,9 @@ export type GridItemType = ({
   imageURL?: any;
   logoURL?: any;
 }) => JSX.Element;
+
+export type OverviewImageType = ({
+  item: { image, title, logo },
+}: {
+  item: { image: string; title: string; logo: string };
+}) => JSX.Element;
