@@ -45,7 +45,7 @@ export default function Navbar() {
               {population.map((item: any) => {
                 return (
                   <NavLink
-                    to={`/${item.link}`}
+                    to={`/tabelas/${item.link}`}
                     className="rounded-xl"
                     key={item.link}
                   >
@@ -61,7 +61,7 @@ export default function Navbar() {
               return (
                 <li key={item.link}>
                   <NavLink
-                    to={`/${item.link}`}
+                    to={`/tabelas/${item.link}`}
                     className="btn btn-ghost btn-ghost-primary text-lg  py-3 px-3 rounded-xl uppercase  tracking-wider font-medium min-w-max mx-2"
                   >
                     {item.title}

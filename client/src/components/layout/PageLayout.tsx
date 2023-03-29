@@ -7,9 +7,7 @@ export function PageLayout() {
   return (
     <>
       <Navbar />
-
       <Outlet />
-
       <footer>
         <BackgroundImage />
       </footer>

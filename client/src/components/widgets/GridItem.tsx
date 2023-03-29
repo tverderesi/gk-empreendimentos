@@ -19,17 +19,13 @@ export const GridItem: GridItemType = ({
     });
   };
   return (
-    <Link
-      to={`/${link}`}
-      className={`transition-all relative col-1 p-3 h-[calc((100vw-5rem)/2)] w-[calc(50vw-2.5rem)] md:h-[calc((100vw-5rem)/3)] md:w-[calc((100vw-5rem)/3)] lg:h-72 lg:w-72  bg-cadetblue-600 flex items-center text-primary-content justify-center rounded-xl drop-shadow-lg  text-center`}
-      onClick={handleClick}
-    >
+    <Link to={`/tabelas/${link}`} className="grid-item" onClick={handleClick}>
       {imageURL ? (
         <div className="absolute top-0   w-full h-full ">
           <img
             src={imageURL}
             alt={name}
-            className="p-0 absolute  w-full h-full justify-self-center self-center object-cover   rounded-xl drop-shadow-xl"
+            className="p-0 absolute  w-full h-full justify-self-center self-center object-cover  rounded-xl drop-shadow-xl"
           />
           <div className="pt-2 absolute bottom-0 bg-gradient-to-t from-slate-900/90 border-0 to-transparent rounded-xl rounded-t-none">
             <img src={logoURL} alt={name} className="w-4/5 mx-auto mb-5 " />
