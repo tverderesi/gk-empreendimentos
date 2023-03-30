@@ -1,8 +1,8 @@
 export const lumina = {
   title: "lumina",
   link: "lumina",
-  image: "/buildings/lumina/lumina.jpg",
-  logo: "/buildings/lumina/logo.png",
+  image: "lumina.jpg",
+  logo: "lumina-logo.png",
   address: "Av. Leopoldo Zarling, 1890, Bombas, Bombinhas – SC",
   deadline: "2025-10-01T03:00:00.000Z",
   apartments: [
@@ -17,6 +17,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2654000.00 ",
     },
     {
       ID: "2",
@@ -30,6 +31,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "4178000.00",
     },
     {
       ID: "3",
@@ -42,6 +44,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2729000.00",
     },
     {
       ID: "4",
@@ -49,11 +52,13 @@ export const lumina = {
       floor: "3",
       apartmentID: "4",
       availability: "sold",
+      aparmentNumber: "304A",
       area: "127.45",
       suites: "3",
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2257000.00",
     },
     {
       ID: "5",
@@ -66,6 +71,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2257000.00 ",
     },
     {
       ID: "6",
@@ -78,6 +84,7 @@ export const lumina = {
       demiSuites: "2",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "1834000.00",
     },
     {
       ID: "7",
@@ -90,6 +97,7 @@ export const lumina = {
       demiSuites: "2",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "1619000.00",
     },
     {
       ID: "8",
@@ -103,6 +111,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2618000.00",
     },
     {
       ID: "9",
@@ -115,6 +124,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2029000.00",
     },
     {
       ID: "10",
@@ -127,6 +137,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "3328000.00",
     },
     {
       ID: "11",
@@ -139,10 +150,10 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2829000.00",
     },
     {
       ID: "12",
-
       tower: "A",
       floor: "4",
       apartmentNumber: "404A",
@@ -152,6 +163,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2357000.00 ",
     },
     {
       ID: "13",
@@ -164,6 +176,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: " 1732000.00",
     },
     {
       ID: "14",
@@ -176,6 +189,7 @@ export const lumina = {
       demiSuites: "2",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "1884000.00",
     },
     {
       ID: "15",
@@ -188,6 +202,7 @@ export const lumina = {
       demiSuites: "2",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "1667000.00",
     },
     {
       ID: "16",
@@ -200,6 +215,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2014000.00",
     },
     {
       ID: "17",
@@ -213,6 +229,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2129000.00",
     },
     {
       ID: "18",
@@ -225,6 +242,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "3428000.00",
     },
     {
       ID: "19",
@@ -237,6 +255,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2929000.00 ",
     },
     {
       ID: "20",
@@ -249,6 +268,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2457000.00",
     },
     {
       ID: "21",
@@ -261,6 +281,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2457000.00",
     },
     {
       ID: "22",
@@ -273,6 +294,7 @@ export const lumina = {
       demiSuites: "2",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "1934000.00 ",
     },
     {
       ID: "23",
@@ -286,6 +308,7 @@ export const lumina = {
       demiSuites: "2",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "1717000.00",
     },
     {
       ID: "24",
@@ -298,6 +321,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2114000.00 ",
     },
     {
       ID: "25",
@@ -310,6 +334,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2229000.00 ",
     },
     {
       ID: "26",
@@ -322,6 +347,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "3528000.00 ",
     },
     {
       ID: "27",
@@ -334,6 +360,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "3029000.00",
     },
     {
       ID: "28",
@@ -346,7 +373,9 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2557000.00",
     },
+
     {
       ID: "29",
       tower: "A",
@@ -358,6 +387,7 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2557000.00 ",
     },
     {
       ID: "30",
@@ -370,6 +400,7 @@ export const lumina = {
       demiSuites: "2",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "1984000.00",
     },
     {
       ID: "31",
@@ -382,6 +413,7 @@ export const lumina = {
       demiSuites: "2",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "1767000.00",
     },
     {
       ID: "32",
@@ -394,6 +426,163 @@ export const lumina = {
       demiSuites: "0",
       blueprintURL:
         "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2214000.00 ",
+    },
+    {
+      ID: "33",
+      tower: "A",
+      floor: "7",
+      apartmentNumber: "701A",
+      availability: "available",
+      area: "125.04",
+      suites: "3",
+      demiSuites: "0",
+      blueprintURL:
+        "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2314000.00",
+    },
+    {
+      ID: "34",
+      tower: "A",
+      floor: "7",
+      apartmentNumber: "702A",
+      availability: "sold",
+      area: "151.14",
+      suites: "4",
+      demiSuites: "0",
+      blueprintURL:
+        "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "3628000.00",
+    },
+    {
+      ID: "35",
+      tower: "A",
+      floor: "7",
+      apartmentNumber: "703A",
+      availability: "sold",
+      area: "126.43",
+      suites: "3",
+      demiSuites: "0",
+      blueprintURL:
+        "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "3129000.00",
+    },
+    {
+      ID: "36",
+      tower: "A",
+      floor: "7",
+      apartmentNumber: "704A",
+      availability: "sold",
+      area: "127.45",
+      suites: "3",
+      demiSuites: "0",
+      blueprintURL:
+        "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2657000.00",
+    },
+    {
+      ID: "37",
+      tower: "A",
+      floor: "7",
+      apartmentNumber: "705A",
+      availability: "sold",
+      area: "127.56",
+      suites: "3",
+      demiSuites: "0",
+      blueprintURL:
+        "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2657000.00",
+    },
+    {
+      ID: "38",
+      tower: "A",
+      floor: "7",
+      apartmentNumber: "706A",
+      availability: "sold",
+      area: "108.56",
+      suites: "1",
+      demiSuites: "2",
+      blueprintURL:
+        "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2084000.00",
+    },
+    {
+      ID: "39",
+      tower: "A",
+      floor: "7",
+      apartmentNumber: "707A",
+      availability: "available",
+      area: "106.29",
+      suites: "1",
+      demiSuites: "2",
+      blueprintURL:
+        "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "1817000.00 ",
+    },
+    {
+      ID: "40",
+      tower: "A",
+      floor: "7",
+      apartmentNumber: "708A",
+      availability: "available",
+      area: "125.1",
+      suites: "3",
+      demiSuites: "0",
+      blueprintURL:
+        "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "2314000.00",
+    },
+    {
+      ID: "41",
+      tower: "A",
+      floor: "8",
+      apartmentNumber: "801A",
+      availability: "sold",
+      area: "312.30",
+      suites: "4",
+      demiSuites: "0",
+      blueprintURL:
+        "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "5713000.00",
+    },
+    {
+      ID: "42",
+      tower: "A",
+      floor: "8",
+      apartmentNumber: "802A",
+      availability: "sold",
+      area: "290.84 m",
+      suites: "4",
+      demiSuites: "0",
+      blueprintURL:
+        "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "4702000.00 ",
+    },
+    {
+      ID: "43",
+      tower: "A",
+      floor: "8",
+      apartmentNumber: "803A",
+      availability: "sold",
+      area: "204.39",
+      suites: "4",
+      demiSuites: "0",
+      blueprintURL:
+        "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "3113000.00",
+    },
+    {
+      ID: "44",
+      tower: "A",
+      floor: "8",
+      apartmentNumber: "804A",
+      availability: "available",
+      area: "203.05",
+      suites: "4",
+      demiSuites: "0",
+      blueprintURL:
+        "https://tabelas.gkempreendimentos.com.br/wp-content/uploads/2022/12/01B-768x1024.png",
+      price: "3688000.00",
     },
   ],
 };

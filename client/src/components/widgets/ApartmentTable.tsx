@@ -6,7 +6,7 @@ type ApartmentTableProps = {
 
 export default function ApartmentTable({ apartments }: ApartmentTableProps) {
   const availableApartments = apartments.filter((apartment) => {
-    return apartment.availability === "available";
+    return apartment.availability !== "sold";
   });
   return (
     <table className="w-full whitespace-nowrap">
@@ -16,11 +16,15 @@ export default function ApartmentTable({ apartments }: ApartmentTableProps) {
             Apartamento
           </th>
           <th className="px-6 py-3 text-lg font-medium text-left uppercase tracking-wider">
+            Preço
+          </th>
+          <th className="px-6 py-3 text-lg font-medium text-left uppercase tracking-wider">
             Área
           </th>
           <th className="px-6 py-3 text-lg font-medium text-left uppercase tracking-wider">
-            Suítes/Demi-suítes
+            Quartos
           </th>
+
           <th className="px-6 py-3 text-lg font-medium text-left uppercase tracking-wider">
             Planta
           </th>
@@ -33,10 +37,20 @@ export default function ApartmentTable({ apartments }: ApartmentTableProps) {
               {apartment.apartmentNumber}
             </td>
             <td className="px-6 py-4 whitespace-nowrap text-lg text-white">
-              {apartment.area}m²
+              R$ {""}
+              {Number(apartment.price)
+                .toFixed(2)
+                .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+                .replace(".", ",")}
             </td>
             <td className="px-6 py-4 whitespace-nowrap text-lg text-white">
-              {apartment.suites} suítes + {apartment.demiSuites} demi-suítes
+              {apartment.area} {""}m²
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-lg text-white tracking-wider">
+              {apartment.suites} suítes
+              {apartment.demiSuites !== "0"
+                ? ` + ${apartment.demiSuites} demi-suítes`
+                : ""}
             </td>
             <td className="px-6 py-4 whitespace-nowrap text-lg text-white">
               <img

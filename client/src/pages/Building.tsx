@@ -63,7 +63,7 @@ export function Building() {
               </div>
             </section>
           </section>
-          <section className="relative top-24 md:top-28 w-full md:mt-4 md:w-11/12 md:rounded-xl mx-auto bg-[#1a1a1a] z-10 flex flex-col lg:flex-row p-4 md:shadow-xl mb-3">
+          <section className="relative top-24 md:top-28 w-full md:mt-4 md:w-11/12 md:rounded-xl mx-auto bg-[#1a1a1a] z-10 flex flex-col lg:flex-row p-4 md:shadow-xl mb-3 overflow-x-scroll">
             <ApartmentTable apartments={building.apartments} />
           </section>
         </div>

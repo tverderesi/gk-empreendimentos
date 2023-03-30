@@ -54,6 +54,7 @@ export type Apartment = {
   suites: string;
   demiSuites: string;
   blueprintURL: string;
+  price: string;
 };
 
 export type TowerAvailability = {

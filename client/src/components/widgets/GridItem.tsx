@@ -23,12 +23,16 @@ export const GridItem: GridItemType = ({
       {imageURL ? (
         <div className="absolute top-0   w-full h-full ">
           <img
-            src={imageURL}
+            src={`/buildings/${name}/${imageURL}`}
             alt={name}
             className="p-0 absolute  w-full h-full justify-self-center self-center object-cover  rounded-xl drop-shadow-xl"
           />
           <div className="pt-2 absolute bottom-0 bg-gradient-to-t from-slate-900/90 border-0 to-transparent rounded-xl rounded-t-none">
-            <img src={logoURL} alt={name} className="w-4/5 mx-auto mb-5 " />
+            <img
+              src={`/buildings/${name}/${logoURL}`}
+              alt={name}
+              className="w-4/5 mx-auto mb-5 "
+            />
           </div>
         </div>
       ) : (
