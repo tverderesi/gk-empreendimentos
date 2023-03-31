@@ -7,6 +7,7 @@ import ClientHome from "../components/layout/ClientHome";
 
 import { PageLayout } from "../components/layout/PageLayout";
 import { Building } from "../pages/Building";
+import { ThirdParty } from "../pages/ThirdParty";
 
 export function AppRouter() {
   return (
@@ -19,6 +20,11 @@ export function AppRouter() {
           errorElement={<NotFound />}
         >
           <Route
+            path="/tabelas/terceiros"
+            element={<ThirdParty />}
+            errorElement={<NotFound />}
+          />
+          <Route
             path="/tabelas/"
             element={<Home />}
             errorElement={<NotFound />}
@@ -29,8 +35,10 @@ export function AppRouter() {
             element={<Building />}
             errorElement={<NotFound />}
           />
+
           <Route path="*" element={<NotFound />} errorElement={<NotFound />} />
         </Route>
+        <Route path="*" element={<NotFound />} errorElement={<NotFound />} />
       </Routes>
     </Router>
   );

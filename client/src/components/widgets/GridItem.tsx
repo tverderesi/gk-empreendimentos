@@ -12,14 +12,8 @@ export const GridItem: GridItemType = ({
 }) => {
   const { dispatch } = useContext(AppContext);
 
-  const handleClick = (e: React.SyntheticEvent) => {
-    dispatch({
-      type: "GET_LINK",
-      payload: e.currentTarget.getAttribute("href")?.slice(1),
-    });
-  };
   return (
-    <Link to={`/tabelas/${link}`} className="grid-item" onClick={handleClick}>
+    <Link to={`/tabelas/${link}`} className="grid-item">
       {imageURL ? (
         <div className="absolute top-0   w-full h-full ">
           <img

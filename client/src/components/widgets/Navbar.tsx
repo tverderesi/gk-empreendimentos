@@ -23,7 +23,10 @@ export default function Navbar() {
   return (
     <header className="custom-navbar">
       <div className="navbar-start">
-        <NavLink to="/" className="btn btn-ghost normal-case h-full p-2 ml-3">
+        <NavLink
+          to="/tabelas/"
+          className="btn btn-ghost normal-case h-full p-2 ml-3 no-animation"
+        >
           <LogoLetters />
         </NavLink>
       </div>
@@ -31,7 +34,7 @@ export default function Navbar() {
         <ul className="menu menu-horizontal p-0 my-auto">
           <li>
             <NavLink
-              to="/"
+              to="/tabelas/"
               className="btn btn-ghost btn-ghost-primary text-lg  py-3 px-3 rounded-xl uppercase  tracking-wider font-medium min-w-max mx-2"
               onClick={handleClick}
             >
@@ -72,15 +75,9 @@ export default function Navbar() {
           )}
           <ListDropDown>
             <>Outros</>
+
             <NavLink
-              to="/folders"
-              className=" rounded-xl text-lg  mb-1 py-3 px-3  uppercase  tracking-wider font-medium "
-              onClick={handleClick}
-            >
-              Folders e Tabelas
-            </NavLink>
-            <NavLink
-              to="/terceiros"
+              to="/tabelas/terceiros"
               className="text-lg rounded-xl   py-3 px-3 uppercase  tracking-wider font-medium "
               onClick={handleClick}
             >
