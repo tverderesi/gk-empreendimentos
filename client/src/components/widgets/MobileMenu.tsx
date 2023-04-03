@@ -53,14 +53,14 @@ export const MobileMenu: MobileMenuType = ({
         )}
 
         <Link
-          to="/folders"
+          to="/tabelas/folders"
           className="text-2xl py-5 text-white tracking-wider font-light uppercase"
           onClick={handleClick}
         >
           Folders e Tabelas
         </Link>
         <Link
-          to="/terceiros"
+          to="/tabelas/terceiros"
           className="text-2xl mb-10  pt-5 text-white tracking-wider font-light uppercase"
           onClick={handleClick}
         >

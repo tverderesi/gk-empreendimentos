@@ -44,7 +44,7 @@ export function Building() {
                       className="inline  hover:text-primary"
                       target="_blank"
                     >
-                      <span className="material-symbols-outlined relative top-1 mr-1 inline">
+                      <span className="material-symbols-outlined relative top-1 mr-1 inline text-primary">
                         pin_drop
                       </span>
                     </a>
