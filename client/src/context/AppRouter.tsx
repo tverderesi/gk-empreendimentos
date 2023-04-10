@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from "../pages/Home";
+import { TableHome } from "../pages/TableHome";
 
 import { NotFound } from "../pages/NotFound";
-import ClientHome from "../components/layout/ClientHome";
+import { ClientHome } from "../components/layout/ClientHome";
 
 import { PageLayout } from "../components/layout/PageLayout";
 import { Building } from "../pages/Building";
@@ -26,7 +26,7 @@ export function AppRouter() {
           />
           <Route
             path="/tabelas/"
-            element={<Home />}
+            element={<TableHome />}
             errorElement={<NotFound />}
           />
           <Route

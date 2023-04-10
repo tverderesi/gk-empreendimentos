@@ -2,7 +2,7 @@ import Grid from "../components/widgets/Grid";
 import { useContext } from "react";
 import AppContext from "../context/AppContext";
 import { GridItem } from "../components/widgets/GridItem";
-export default function Home() {
+export function TableHome() {
   const { population } = useContext(AppContext);
   return (
     <main
