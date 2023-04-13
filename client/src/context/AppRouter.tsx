@@ -3,17 +3,24 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { TableHome } from "../pages/TableHome";
 
 import { NotFound } from "../pages/NotFound";
-import { ClientHome } from "../components/layout/ClientHome";
 
 import { PageLayout } from "../components/layout/PageLayout";
 import { Building } from "../pages/Building";
 import { ThirdParty } from "../pages/ThirdParty";
+import { About } from "../pages/About";
 
 export function AppRouter() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<ClientHome />} errorElement={<NotFound />} />
+        <Route path="/" element={<PageLayout />} errorElement={<NotFound />}>
+          <Route
+            path="/sobre"
+            element={<About />}
+            errorElement={<NotFound />}
+          />
+        </Route>
+
         <Route
           path="/tabelas"
           element={<PageLayout />}

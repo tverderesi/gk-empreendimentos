@@ -34,7 +34,16 @@ li:hover > a > svg.rotation {
 }
 
 .custom-navbar {
-  @apply navbar bg-cadet-blue-400 dark:bg-[#1a1a1a]/80 backdrop-blur-xl py-[1rem] fixed w-full top-0 z-[100] h-24 drop-shadow-xl;
+  @apply navbar bg-cadet-blue-400  py-[1rem] fixed w-full top-0 z-[100] h-24 drop-shadow-xl;
+  background-color: #1a1a1a;
+}
+
+.custom-footer {
+  @apply footer w-screen   backdrop-blur-xl;
+  height: 6rem;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
 }
 
 .nav-link {
