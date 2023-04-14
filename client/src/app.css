@@ -39,13 +39,17 @@ li:hover > a > svg.rotation {
 }
 
 .custom-footer {
-  @apply flex  flex-col items-center justify-between md:justify-center  w-screen md:flex-row h-64 md:h-24 p-6 font-semibold;
+  @apply flex  flex-col items-center justify-between lg:justify-center  w-screen lg:flex-row h-64 lg:h-24 p-6 font-semibold;
 
   background-color: #1a1a1a;
 }
 
 .custom-footer > * {
   @apply mx-2 text-center;
+}
+
+.btn-cadet-blue {
+  @apply btn btn-primary bg-cadet-blue-500 text-white;
 }
 
 .custom-footer a:hover {
