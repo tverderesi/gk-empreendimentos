@@ -8,12 +8,14 @@ import { PageLayout } from "../components/layout/PageLayout";
 import { Building } from "../pages/Building";
 import { ThirdParty } from "../pages/ThirdParty";
 import { About } from "../pages/About";
+import Home from "../pages/Home";
 
 export function AppRouter() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<PageLayout />} errorElement={<NotFound />}>
+          <Route path="/" element={<Home />} errorElement={<NotFound />} />
           <Route
             path="/sobre"
             element={<About />}
