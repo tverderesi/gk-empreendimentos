@@ -39,11 +39,22 @@ li:hover > a > svg.rotation {
 }
 
 .custom-footer {
-  @apply footer w-screen   backdrop-blur-xl;
-  height: 6rem;
+  @apply flex  flex-col items-center justify-between md:justify-center  w-screen md:flex-row h-64 md:h-24 p-6 font-semibold;
+
   background-color: #1a1a1a;
-  display: flex;
-  align-items: center;
+}
+
+.custom-footer > * {
+  @apply mx-2 text-center;
+}
+
+.custom-footer a:hover {
+  @apply text-cadet-blue-500 !important;
+}
+
+.custom-footer svg {
+  width: 2rem;
+  height: 2rem;
 }
 
 .nav-link {
