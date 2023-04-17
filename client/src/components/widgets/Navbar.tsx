@@ -6,12 +6,11 @@ import { MobileMenu } from "./MobileMenu";
 import { ListDropDown } from "../atoms/ListDropDown";
 
 export function Navbar() {
-  const { population, menuOpen, dispatch } = useContext(AppContext);
-
+  const { menuOpen, dispatch } = useContext(AppContext);
+  const population = [];
   const handleClick = () => {
     dispatch({ type: "CLOSE_MENU" });
   };
-
   const handleBlur = () => {
     dispatch({ type: "CLOSE_MENU" });
   };
@@ -24,7 +23,7 @@ export function Navbar() {
     <header className="custom-navbar">
       <div className="navbar-start">
         <NavLink
-          to="/tabelas/"
+          to="/"
           className="btn btn-ghost normal-case h-full p-2 ml-3 no-animation"
         >
           <LogoLetters />
@@ -32,17 +31,13 @@ export function Navbar() {
       </div>
       <div className="navbar-center hidden lg:flex justify-center">
         <ul className="menu menu-horizontal p-0 my-auto">
-          <li>
-            <NavLink
-              to="/"
-              className="btn btn-ghost btn-ghost-primary text-lg  rounded-xl uppercase  tracking-wider font-medium min-w-max mx-2"
-              onClick={handleClick}
-            >
-              Início
-            </NavLink>
-          </li>
+          <NavItem title="Início" link="/" />
+          <NavItem title="Sobre A GK" link="/sobre" />
+          <NavItem title="Empreendimentos" link="/empreendimentos" />
+          <NavItem title="Contato" link="/contato" />
+          <NavItem title="Oportunidades" link="/Oportunidades" />
 
-          {population.length > 5 ? (
+          {/* {population.length > 5 ? (
             <ListDropDown>
               <>Empreendimentos</>
 
@@ -65,7 +60,7 @@ export function Navbar() {
               return (
                 <li key={item.link}>
                   <NavLink
-                    to={`/tabelas/${item.link}`}
+                    to={`${item.link}`}
                     className="btn btn-ghost btn-ghost-primary text-lg  py-3 px-3 rounded-xl uppercase  tracking-wider font-medium min-w-max mx-2"
                   >
                     {item.title}
@@ -73,18 +68,7 @@ export function Navbar() {
                 </li>
               );
             })
-          )}
-          <ListDropDown>
-            <>Outros</>
-
-            <NavLink
-              to="/tabelas/terceiros"
-              className="text-lg rounded-xl   py-3 px-3 uppercase  tracking-wider font-medium "
-              onClick={handleClick}
-            >
-              Imóveis de Terceiros
-            </NavLink>
-          </ListDropDown>
+          )} */}
         </ul>
       </div>
       <div className="navbar-end">
@@ -95,5 +79,22 @@ export function Navbar() {
         />
       </div>
     </header>
+  );
+}
+function NavItem({ title, link }: { title: string; link: string }) {
+  const { dispatch } = useContext(AppContext);
+  const handleClick = () => {
+    dispatch({ type: "CLOSE_MENU" });
+  };
+  return (
+    <li>
+      <NavLink
+        to={link}
+        className="btn btn-ghost btn-ghost-primary text-lg  rounded-xl uppercase  tracking-wider font-medium min-w-max mx-2"
+        onClick={handleClick}
+      >
+        {title}
+      </NavLink>
+    </li>
   );
 }

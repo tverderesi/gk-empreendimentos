@@ -45,12 +45,12 @@ li:hover > a > svg.rotation {
 }
 
 .custom-footer {
-  @apply flex  flex-col items-center justify-between lg:justify-center  w-screen lg:flex-row h-48 lg:h-[4.5rem] p-6 font-semibold text-sm;
+  @apply flex  flex-col items-center justify-between lg:justify-center  w-screen lg:flex-row lg:h-[4.5rem] p-6 font-semibold text-sm;
   background-color: #1a1a1a;
 }
 
 .custom-footer > * {
-  @apply mx-2 text-center;
+  @apply mx-2 my-1 text-center;
 }
 
 .custom-footer span {
@@ -58,7 +58,7 @@ li:hover > a > svg.rotation {
 }
 
 .custom-footer span.material-symbols-outlined {
-  @apply text-lg mr-1  lg:bottom-0 relative bottom-0.5;
+  @apply text-lg mr-1;
 }
 
 .btn-cadet-blue {
@@ -85,7 +85,6 @@ li:hover > a > svg.rotation {
 
 .btn-ghost-primary:hover {
   @apply btn-ghost;
-
   @apply bg-primary-focus !important;
   @apply text-white;
 }
@@ -97,10 +96,6 @@ li:hover > a > svg.rotation {
 .grid-item:hover {
   transform: scale(1.03);
   transition: all 0.35s ease-in-out;
-}
-
-.material-symbols-outlined-override {
-  font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 200, "opsz" 48;
 }
 
 /* ----------------------------------------------
