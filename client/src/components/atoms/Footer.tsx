@@ -1,7 +1,33 @@
 export function Footer() {
   return (
-    <footer className="custom-footer ">
-      <div className="  justify-self-start flex flex-row md:flex-grow w-[112px]">
+    <footer className="custom-footer">
+      <img src="/logos/logo_letters.png" className="h-4" />
+
+      <a
+        href="https://goo.gl/maps/GdzAwYLQtZani1uGA"
+        className="flex flex-col lg:flex-row items-center"
+      >
+        <div className="flex flex-row items-center">
+          <span className="material-symbols-outlined">location_on</span>
+          <span>Av. Vereador Manoel José dos Santos, 1.310 </span>
+        </div>
+        <span className="lg:ml-1"> Sala 14, Bombinhas - SC</span>
+      </a>
+      <a
+        href="mailto:gkengenharia@gmail.com"
+        className="flex flex-row items-center "
+      >
+        <span className="material-symbols-outlined">mail</span>
+        <span>gkengenharia@gmail.com</span>
+      </a>
+      <a href="tel:04732640018" className="flex flex-row items-center">
+        <span className="material-symbols-outlined">call</span>
+        <span>(47) 3264-0018</span>
+      </a>
+      <a href="https://dwv.com.br/" className="flex flex-row ml-1">
+        <img src="/badges/dwv.png" alt="DWV" className="h-full py-1" />
+      </a>
+      <div className="justify-self-start flex flex-row md:flex-grow ">
         <a
           href="https://www.instagram.com/gkengenharia/"
           className="flex flex-row"
@@ -49,21 +75,6 @@ export function Footer() {
           </svg>
         </a>
       </div>
-      <a href="https://goo.gl/maps/GdzAwYLQtZani1uGA" className="flex flex-row">
-        <span className="material-symbols-outlined mr-1">location_on</span>
-        Av. Vereador Manoel José dos Santos, 1.310, Sala 14, Bombinhas - SC
-      </a>
-      <a href="mailto:gkengenharia@gmail.com" className="flex flex-row ">
-        <span className="material-symbols-outlined mr-2">mail</span>
-        gkengenharia@gmail.com
-      </a>
-      <a href="tel:04732640018" className="flex flex-row">
-        <span className="material-symbols-outlined mr-2">call</span>(47)
-        3264-0018
-      </a>
-      <a href="https://dwv.com.br/" className="flex flex-row ">
-        <img src="/badges/dwv.png" alt="DWV" className="w-20" />
-      </a>
     </footer>
   );
 }

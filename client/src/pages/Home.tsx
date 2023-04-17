@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <ResponsiveCarousel
       hasText
-      className="h-[calc(100vh-22rem)] lg:h-[calc(100vh-12rem)] transition-all duration-750 ease-in-out"
+      className="h-[calc(100vh-6rem)] lg:h-[calc(100vh-10.5rem)] transition-all duration-750 ease-in-out"
       images={[
         {
           src: "./pages/home/lumina_home.png",

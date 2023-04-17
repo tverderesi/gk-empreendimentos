@@ -51,7 +51,7 @@ export function ResponsiveCarousel({
                         : ""}
                     </p>
                     <Link
-                      className="btn btn-cadet-blue m-min-h-6 text-xl w-1/4 mx-auto justify-self-end mt-auto mb-12"
+                      className="btn btn-cadet-blue m-min-h-6 text-xl lg:w-1/4 lg:mx-auto justify-self-end mt-auto mb-12 px-3 py-2"
                       to={link ? link : "/404"}
                     >
                       Descubra

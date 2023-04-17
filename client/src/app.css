@@ -16,6 +16,10 @@ li:hover > a > svg.rotation {
   transform: rotate(180deg);
 }
 
+.h-18 {
+  height: 4.5rem;
+}
+
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
@@ -35,17 +39,26 @@ li:hover > a > svg.rotation {
 
 .custom-navbar {
   @apply navbar bg-cadet-blue-400  py-[1rem] fixed w-full top-0 z-[100] h-24 drop-shadow-xl;
+  scroll-snap-type: proximity;
+  scroll-snap-align: center;
   background-color: #1a1a1a;
 }
 
 .custom-footer {
-  @apply flex  flex-col items-center justify-between lg:justify-center  w-screen lg:flex-row h-64 lg:h-24 p-6 font-semibold;
-
+  @apply flex  flex-col items-center justify-between lg:justify-center  w-screen lg:flex-row h-48 lg:h-[4.5rem] p-6 font-semibold text-sm;
   background-color: #1a1a1a;
 }
 
 .custom-footer > * {
   @apply mx-2 text-center;
+}
+
+.custom-footer span {
+  @apply text-base;
+}
+
+.custom-footer span.material-symbols-outlined {
+  @apply text-lg mr-1  lg:bottom-0 relative bottom-0.5;
 }
 
 .btn-cadet-blue {
@@ -57,8 +70,8 @@ li:hover > a > svg.rotation {
 }
 
 .custom-footer svg {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .nav-link {

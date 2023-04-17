@@ -5,7 +5,7 @@ import AppContext from "../../context/AppContext";
 import { MobileMenu } from "./MobileMenu";
 import { ListDropDown } from "../atoms/ListDropDown";
 
-export function Navbar() {
+export function TableNavbar() {
   const { population, menuOpen, dispatch } = useContext(AppContext);
 
   const handleClick = () => {
@@ -34,14 +34,13 @@ export function Navbar() {
         <ul className="menu menu-horizontal p-0 my-auto">
           <li>
             <NavLink
-              to="/"
-              className="btn btn-ghost btn-ghost-primary text-lg  rounded-xl uppercase  tracking-wider font-medium min-w-max mx-2"
+              to="/tabelas/"
+              className="btn btn-ghost btn-ghost-primary text-lg  py-3 px-3 rounded-xl uppercase  tracking-wider font-medium min-w-max mx-2"
               onClick={handleClick}
             >
-              Início
+              Home
             </NavLink>
           </li>
-
           {population.length > 5 ? (
             <ListDropDown>
               <>Empreendimentos</>
