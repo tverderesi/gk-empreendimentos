@@ -36,6 +36,7 @@ export function Navbar() {
           <NavItem title="Empreendimentos" link="/empreendimentos" />
           <NavItem title="Contato" link="/contato" />
           <NavItem title="Oportunidades" link="/Oportunidades" />
+          <NavItem title="Histórico de Obras" link="/historico" />
 
           {/* {population.length > 5 ? (
             <ListDropDown>

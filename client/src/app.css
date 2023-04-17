@@ -45,7 +45,7 @@ li:hover > a > svg.rotation {
 }
 
 .custom-footer {
-  @apply flex  flex-col items-center justify-between lg:justify-center  w-screen lg:flex-row lg:h-[4.5rem] p-6 font-semibold text-sm;
+  @apply flex  flex-col items-center justify-between lg:justify-center  w-screen lg:flex-row lg:h-[4.5rem] p-6 font-semibold text-sm drop-shadow-neg-xl;
   background-color: #1a1a1a;
 }
 
@@ -96,6 +96,15 @@ li:hover > a > svg.rotation {
 .grid-item:hover {
   transform: scale(1.03);
   transition: all 0.35s ease-in-out;
+}
+
+.scroll-snap-center {
+  scroll-snap-align: center;
+}
+
+.scroll-snap {
+  scroll-snap-type: mandatory;
+  scroll-snap-stop: always;
 }
 
 /* ----------------------------------------------

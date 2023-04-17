@@ -15,7 +15,7 @@ export function About() {
 
         <div className="container">
           <article className="mt-20 mb-10 w-full flex flex-wrap mx-auto justify-center">
-            <div className="flex justify-center flex-wrap">
+            <div className="flex justify-center flex-wrap scroll-snap-center">
               <img
                 src="pages/about/01-1024x576.jpg"
                 alt=""

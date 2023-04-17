@@ -46,6 +46,12 @@ module.exports = {
           900: "#D65E00",
         },
       },
+      dropShadow: {
+        "neg-xl": [
+          "0 -20px -13px rgba(0, 0, 0, 0.03)",
+          "0 -8px -5px rgba(0, 0, 0, 0.08)",
+        ],
+      },
     },
   },
   daisyui: {
