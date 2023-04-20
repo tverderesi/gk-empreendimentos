@@ -29,11 +29,13 @@ export type GridItemType = ({
   link,
   imageURL,
   logoURL,
+  className,
 }: {
-  name: any;
-  link: any;
-  imageURL?: any;
-  logoURL?: any;
+  name: string;
+  link: string;
+  imageURL?: string;
+  logoURL?: string;
+  className?: string;
 }) => JSX.Element;
 
 export type OverviewImageType = ({

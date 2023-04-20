@@ -36,8 +36,36 @@ export function Navbar() {
           <NavItem title="Contato" link="/contato" />
           <NavItem title="Oportunidades" link="/Oportunidades" />
           <NavItem title="Histórico de Obras" link="/historico" />
+        </ul>
+      </div>
+      <MobileMenu
+        handleBlur={handleBlur}
+        handleClick={handleClick}
+        handleMenuToggle={handleMenuToggle}
+      />
+    </header>
+  );
+}
+function NavItem({ title, link }: { title: string; link: string }) {
+  const { dispatch } = useContext(AppContext);
+  const handleClick = () => {
+    dispatch({ type: "CLOSE_MENU" });
+  };
+  return (
+    <li>
+      <NavLink
+        to={link}
+        className="btn btn-ghost btn-ghost-primary rounded-lg uppercase  tracking-widest font-medium mx-2 px-2 py-1 my-auto"
+        onClick={handleClick}
+      >
+        {title}
+      </NavLink>
+    </li>
+  );
+}
 
-          {/* {population.length > 5 ? (
+{
+  /* {population.length > 5 ? (
             <ListDropDown>
               <>Empreendimentos</>
 
@@ -68,31 +96,5 @@ export function Navbar() {
                 </li>
               );
             })
-          )} */}
-        </ul>
-      </div>
-      <MobileMenu
-        handleBlur={handleBlur}
-        handleClick={handleClick}
-        handleMenuToggle={handleMenuToggle}
-      />
-    </header>
-  );
-}
-function NavItem({ title, link }: { title: string; link: string }) {
-  const { dispatch } = useContext(AppContext);
-  const handleClick = () => {
-    dispatch({ type: "CLOSE_MENU" });
-  };
-  return (
-    <li>
-      <NavLink
-        to={link}
-        className="btn btn-ghost btn-ghost-primary rounded-lg uppercase  tracking-widest font-medium mx-2 px-2 py-1 my-auto"
-        onClick={handleClick}
-      >
-        {title}
-      </NavLink>
-    </li>
-  );
+          )} */
 }

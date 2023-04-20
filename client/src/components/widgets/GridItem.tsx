@@ -9,23 +9,29 @@ export const GridItem: GridItemType = ({
   link,
   imageURL = "",
   logoURL = "",
+  className = "",
 }) => {
-  const { dispatch } = useContext(AppContext);
+  const transformedName = name
+    .toLowerCase()
+    .normalize("NFD")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-");
 
   return (
-    <Link to={`/tabelas/${link}`} className="grid-item">
+    <Link to={`${link}`} className={`grid-item ${className}`}>
       {imageURL ? (
         <div className="absolute top-0   w-full h-full ">
           <img
-            src={`/buildings/${name}/${imageURL}`}
+            src={`/buildings/${transformedName}/${imageURL}`}
             alt={name}
             className="p-0 absolute  w-full h-full justify-self-center self-center object-cover  rounded-xl drop-shadow-xl"
           />
           <div className="pt-2 absolute bottom-0 bg-gradient-to-t from-slate-900/90 border-0 to-transparent rounded-xl rounded-t-none">
             <img
-              src={`/buildings/${name}/${logoURL}`}
+              src={`/buildings/${transformedName}/${logoURL}`}
               alt={name}
-              className="w-4/5 mx-auto mb-5 "
+              className="w-full mx-auto mb-5  px-5"
             />
           </div>
         </div>

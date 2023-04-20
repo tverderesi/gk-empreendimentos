@@ -65,12 +65,18 @@ export function ResponsiveCarousel({
                 <a
                   href={`#slide${idx === 0 ? images.length : idx}`}
                   className="btn btn-circle"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }}
                 >
                   ❮
                 </a>
                 <a
                   href={`#slide${idx + 1 === images.length ? 1 : idx + 2}`}
                   className="btn btn-circle"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }}
                 >
                   ❯
                 </a>

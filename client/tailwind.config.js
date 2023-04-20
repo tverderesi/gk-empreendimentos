@@ -59,7 +59,7 @@ module.exports = {
       {
         gkdark: {
           ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
-          primary: "#4ab5ba",
+          primary: "#78bfc3",
           accent: "#8B3A24",
         },
       },

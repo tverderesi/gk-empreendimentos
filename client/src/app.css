@@ -40,7 +40,21 @@ li:hover > a > svg.rotation {
 .custom-navbar {
   @apply navbar bg-cadet-blue-400  py-[1rem] fixed w-full top-0 z-[100] h-24 drop-shadow-xl;
 
+  background-color: rgba(26, 26, 26, 0.75);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+}
+
+.custom-navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #1a1a1a;
+  filter: opacity(0);
+  z-index: -1;
 }
 
 .custom-footer {
@@ -97,6 +111,11 @@ li:hover > a > svg.rotation {
   transition: all 0.35s ease-in-out;
 }
 
+.hover-zoom:hover {
+  transform: scale(1.03);
+  transition: all 0.35s ease-in-out;
+}
+
 .scroll-snap-center {
   scroll-snap-align: center;
 }
@@ -104,6 +123,10 @@ li:hover > a > svg.rotation {
 .scroll-snap {
   scroll-snap-type: mandatory;
   scroll-snap-stop: always;
+}
+
+.material-symbols-filled {
+  font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 200, "opsz" 48;
 }
 
 /* ----------------------------------------------

@@ -9,6 +9,7 @@ import { Building } from "../pages/Building";
 import { ThirdParty } from "../pages/ThirdParty";
 import { About } from "../pages/About";
 import Home from "../pages/Home";
+import Buildings from "../pages/Buildings";
 
 export function AppRouter() {
   return (
@@ -19,6 +20,11 @@ export function AppRouter() {
           <Route
             path="/sobre"
             element={<About />}
+            errorElement={<NotFound />}
+          />
+          <Route
+            path="/empreendimentos"
+            element={<Buildings />}
             errorElement={<NotFound />}
           />
         </Route>
