@@ -8,11 +8,12 @@ export function PageLayout() {
   return (
     <div className="pt-24 min-h-screen scroll-snap scroll-snap-center">
       <Navbar />
-      <main className="relative overflow-x-hidden overflow-y-scroll w-screen min-h-[calc(100vh-6rem)] lg:min-h-[calc(100vh-10.5rem)]">
+      <main className="relative overflow-x-hidden overflow-y-scroll w-screen min-h-[calc(100vh-6rem)]">
         <Outlet />
+        <BackgroundImage />
       </main>
+
       <Footer />
-      <BackgroundImage />
     </div>
   );
 }

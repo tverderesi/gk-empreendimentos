@@ -7,7 +7,7 @@ export function Footer() {
         href="https://goo.gl/maps/GdzAwYLQtZani1uGA"
         className="flex flex-col lg:flex-row items-center"
       >
-        <div className="flex flex-row items-center -mb-1">
+        <div className="flex flex-row items-center -mb-1 lg:mb-0">
           <span className="material-symbols-outlined">location_on</span>
           <span>Av. Vereador Manoel José dos Santos, 1.310 </span>
         </div>

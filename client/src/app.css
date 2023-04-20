@@ -39,13 +39,12 @@ li:hover > a > svg.rotation {
 
 .custom-navbar {
   @apply navbar bg-cadet-blue-400  py-[1rem] fixed w-full top-0 z-[100] h-24 drop-shadow-xl;
-  scroll-snap-type: proximity;
-  scroll-snap-align: center;
+
   background-color: #1a1a1a;
 }
 
 .custom-footer {
-  @apply flex  flex-col items-center justify-between lg:justify-center  w-screen lg:flex-row lg:h-[4.5rem] p-6 font-semibold text-sm drop-shadow-neg-xl;
+  @apply flex  flex-col items-center justify-between lg:justify-start w-screen lg:flex-row lg:min-h-[4.5rem] p-6 font-semibold text-sm drop-shadow-neg-xl flex-wrap;
   background-color: #1a1a1a;
 }
 

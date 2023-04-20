@@ -1,11 +1,7 @@
 export default function LogoLetters() {
   return (
     <>
-      <img
-        src={`/logos/logo_lettering.png`}
-        className="h-10"
-        alt="GK Empreendimentos"
-      />
+      <img src={`/logos/logo.png`} className="h-8" alt="GK Empreendimentos" />
     </>
   );
 }

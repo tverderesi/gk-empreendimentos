@@ -21,14 +21,13 @@ export function Navbar() {
 
   return (
     <header className="custom-navbar">
-      <div className="navbar-start">
-        <NavLink
-          to="/"
-          className="btn btn-ghost normal-case h-full p-2 ml-3 no-animation"
-        >
-          <LogoLetters />
-        </NavLink>
-      </div>
+      <NavLink
+        to="/"
+        className="btn btn-ghost normal-case h-full p-2 no-animation flex-grow mx-10 lg:mx-0 lg:flex-grow-0"
+      >
+        <LogoLetters />
+      </NavLink>
+
       <div className="navbar-center hidden lg:flex justify-center">
         <ul className="menu menu-horizontal p-0 my-auto">
           <NavItem title="Início" link="/" />
@@ -72,13 +71,11 @@ export function Navbar() {
           )} */}
         </ul>
       </div>
-      <div className="navbar-end">
-        <MobileMenu
-          handleBlur={handleBlur}
-          handleClick={handleClick}
-          handleMenuToggle={handleMenuToggle}
-        />
-      </div>
+      <MobileMenu
+        handleBlur={handleBlur}
+        handleClick={handleClick}
+        handleMenuToggle={handleMenuToggle}
+      />
     </header>
   );
 }
@@ -91,7 +88,7 @@ function NavItem({ title, link }: { title: string; link: string }) {
     <li>
       <NavLink
         to={link}
-        className="btn btn-ghost btn-ghost-primary text-lg  rounded-xl uppercase  tracking-wider font-medium min-w-max mx-2"
+        className="btn btn-ghost btn-ghost-primary rounded-lg uppercase  tracking-widest font-medium mx-2 px-2 py-1 my-auto"
         onClick={handleClick}
       >
         {title}
