@@ -8,11 +8,11 @@ export default function Buildings() {
   const [filter, setFilter] = React.useState("");
 
   return (
-    <section className="lg:mt-6 w-9/12 mx-auto">
-      <h1 className="text-4xl lg:text-5xl font-semibold text-white uppercase text-center tracking-widest">
+    <section className="lg:mt-6 mt-6 lg:w-9/12 mx-auto">
+      <h1 className="text-2xl lg:text-5xl font-semibold text-white uppercase text-center tracking-widest">
         Empreendimentos
       </h1>
-      <GKDivider />
+      <GKDivider className="w-11/12 mx-auto mb-10" />
 
       <BuildingFilter filter={filter} setFilter={setFilter} />
       <Grid className="transition-all duration-500 ease-in-out">
@@ -88,14 +88,21 @@ export default function Buildings() {
 }
 function BuildingFilter({ filter, setFilter }) {
   return (
-    <div className="btn-group flex flex-row justify-center w-full">
+    <div className="btn-group flex flex-row justify-center w-11/12 mx-auto">
       <button
-        className={`btn no-animation flex items-center ${
-          filter === "" && `bg-burgundy-500 hover:bg-burgundy-400 text-white`
+        className={`btn lg:btn-md btn-sm text-sm no-animation flex items-center ${
+          filter === "" &&
+          `bg-burgundy-500 hover:bg-burgundy-400 text-white flex-grow`
         }`}
         onClick={(e) => {
           e.preventDefault();
           setFilter("");
+        }}
+        onTouchStart={(e) => {
+          console.log("touched me}");
+        }}
+        onTouchMoveCapture={(e) => {
+          console.log("now you are moving me");
         }}
       >
         <svg
@@ -105,7 +112,7 @@ function BuildingFilter({ filter, setFilter }) {
           height="96.000000pt"
           viewBox="0 0 96.000000 96.000000"
           preserveAspectRatio="xMidYMid meet"
-          className="h-8 w-8 inline-block mr-2"
+          className="h-8 w-8 inline-block"
         >
           <g
             transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)"
@@ -115,16 +122,23 @@ function BuildingFilter({ filter, setFilter }) {
             <path d="M212 669 c-48 -14 -109 -80 -123 -131 -52 -196 172 -338 327 -204 l39 33 -20 37 c-11 20 -22 36 -24 36 -3 0 -21 -16 -41 -35 -45 -44 -93 -54 -143 -30 -104 49 -75 206 41 222 62 8 100 -21 178 -138 37 -55 83 -114 103 -130 95 -78 238 -56 302 48 19 30 24 52 24 103 0 78 -26 127 -88 168 -34 23 -52 27 -108 27 -59 0 -73 -4 -110 -30 -61 -44 -67 -56 -39 -95 l23 -32 16 21 c62 81 176 78 216 -6 49 -103 -56 -207 -159 -158 -26 12 -53 41 -86 89 -91 132 -111 156 -149 182 -44 29 -126 39 -179 23z" />
           </g>
         </svg>
-        Todos
+        {!filter && (
+          <span className="ml-2 transition-all ease-in-out duration-200">
+            Todos
+          </span>
+        )}
       </button>
       <button
-        className={`btn no-animation flex items-center ${
+        className={`btn btn-sm lg:btn-md no-animation flex items-center ${
           filter === "new" &&
-          `bg-brown-sugar-500 text-white hover:bg-brown-sugar-400`
+          `bg-brown-sugar-500 text-white hover:bg-brown-sugar-400 flex-grow`
         }`}
         onClick={(e) => {
           e.preventDefault();
           setFilter("new");
+        }}
+        onTouchMoveCapture={(e) => {
+          console.log("now you are moving me");
         }}
       >
         <span
@@ -132,12 +146,16 @@ function BuildingFilter({ filter, setFilter }) {
         >
           workspace_premium
         </span>
-        Lançamentos
+        {filter === "new" && (
+          <span className="ml-2 transition-all ease-in-out duration-200">
+            Lançamentos
+          </span>
+        )}
       </button>
       <button
-        className={`btn no-animation flex items-center ${
+        className={`btn btn-sm lg:btn-md no-animation flex items-center ${
           filter === "ongoing" &&
-          `bg-golden-rod-500 text-white hover:bg-golden-rod-400`
+          `bg-golden-rod-500 text-white hover:bg-golden-rod-400 flex-grow`
         }`}
         onClick={(e) => {
           e.preventDefault();
@@ -149,11 +167,15 @@ function BuildingFilter({ filter, setFilter }) {
         >
           construction
         </span>
-        Em Andamento
+        {filter === "ongoing" && (
+          <span className="ml-2 transition-all ease-in-out duration-200">
+            Em Andamento
+          </span>
+        )}
       </button>
       <button
-        className={`btn no-animation flex items-center ${
-          filter === "sold" && `bg-cadet-blue-500 text-white`
+        className={`btn btn-sm lg:btn-md no-animation flex items-center ${
+          filter === "sold" && `bg-cadet-blue-500 text-white flex-grow`
         }`}
         onClick={(e) => {
           e.preventDefault();
@@ -165,19 +187,20 @@ function BuildingFilter({ filter, setFilter }) {
         >
           task_alt
         </span>
-        Finalizados
+        {filter === "sold" && (
+          <span className="ml-2 transition-all ease-in-out duration-200">
+            Finalizados
+          </span>
+        )}
       </button>
     </div>
   );
 }
 
 export function FilterManager({ children, filter, filteringProp }) {
-  return (
-    <>
-      {!filter && children}
-      {children.map((child) => {
-        return child.props[`${filteringProp}`] === filter && child;
-      })}
-    </>
-  );
+  const filteredChildren = filter
+    ? children.filter((child) => child.props[filteringProp] === filter)
+    : children;
+
+  return <>{filteredChildren}</>;
 }
