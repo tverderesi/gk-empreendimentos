@@ -7,9 +7,9 @@ export function CustomBuildingBadge({
   status = "fallback",
 }) {
   const statusColor = {
-    new: "bg-cadet-blue-500",
+    new: "bg-brown-sugar-500",
     ongoing: "bg-golden-rod-500",
-    sold: "bg-brown-sugar-500",
+    sold: "bg-cadet-blue-500",
     fallback: "bg-slate-500",
   };
 

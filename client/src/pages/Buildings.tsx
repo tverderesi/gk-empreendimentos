@@ -2,80 +2,182 @@ import React from "react";
 import { GridItem } from "../components/widgets/GridItem";
 import { Grid } from "../components/widgets/Grid";
 import { CustomBuildingBadge } from "../components/atoms/CustomBadge";
+import { GKDivider } from "../components/atoms/GKDivider";
 
 export default function Buildings() {
+  const [filter, setFilter] = React.useState("");
+
   return (
-    <section className="lg:mt-6">
-      <h1 className="text-4xl lg:text-5xl font-semibold text-primary uppercase text-center">
+    <section className="lg:mt-6 w-9/12 mx-auto">
+      <h1 className="text-4xl lg:text-5xl font-semibold text-white uppercase text-center tracking-widest">
         Empreendimentos
       </h1>
+      <GKDivider />
 
+      <BuildingFilter filter={filter} setFilter={setFilter} />
       <Grid className="transition-all duration-500 ease-in-out">
-        <CustomBuildingBadge icon="workspace_premium" status="new">
-          <GridItem
-            name={"Lumina"}
-            link={"/empreendimentos/lumina"}
-            imageURL={"lumina.jpg"}
-            logoURL={"lumina-logo.png"}
-          />
-        </CustomBuildingBadge>
-        <CustomBuildingBadge icon="workspace_premium" status="ongoing">
-          <GridItem
-            name={"Adra"}
-            link={"/empreendimentos/adra"}
-            imageURL={"adra.jpg"}
-            logoURL={"adra-logo.png"}
-          />
-        </CustomBuildingBadge>
-        <CustomBuildingBadge icon="workspace_premium" status="sold">
-          <GridItem
-            name={"Aion"}
-            link={"/empreendimentos/aion"}
-            imageURL={"aion.png"}
-            logoURL={"aion-logo.png"}
-          />
-        </CustomBuildingBadge>
-        <CustomBuildingBadge icon="workspace_premium" status="sold">
-          <GridItem
-            name={"San Diego"}
-            link={"/empreendimentos/san-diego"}
-            imageURL={"sanDiego.jpg"}
-            logoURL={"sanDiego-logo.png"}
-          />
-        </CustomBuildingBadge>
-        <CustomBuildingBadge icon="workspace_premium" status="sold">
-          <GridItem
-            name={"Porto Madero"}
-            link={"/empreendimentos/porto-madero"}
-            imageURL={"portoMadero.jpg"}
-            logoURL={"portoMadero-logo.png"}
-          />
-        </CustomBuildingBadge>
-        <CustomBuildingBadge icon="workspace_premium" status="sold">
-          <GridItem
-            name={"Porto Fino"}
-            link={"/empreendimentos/porto-fino"}
-            imageURL={"portoFino.jpg"}
-            logoURL={"portoFino-logo.png"}
-          />
-        </CustomBuildingBadge>
-        <CustomBuildingBadge icon="workspace_premium" status="sold">
-          <GridItem
-            name={"Varandas do Atlântico"}
-            link={"empreendimentos/varandas-do-atlantico"}
-            imageURL={"varandasAtlantico.jpg"}
-            logoURL={"varandasAtlantico-logo.png"}
-          />
-        </CustomBuildingBadge>
-        <CustomBuildingBadge icon="workspace_premium" status="sold">
-          <GridItem
-            name={"Rio Maggiore"}
-            link={"empreendimentos/rio-maggiore"}
-            imageURL={"rioMaggiore.jpg"}
-            logoURL={"rioMaggiore-logo.png"}
-          />
-        </CustomBuildingBadge>
+        <FilterManager filter={filter} filteringProp="status">
+          <CustomBuildingBadge icon="workspace_premium" status="new">
+            <GridItem
+              name={"Lumina"}
+              link={"/empreendimentos/lumina"}
+              imageURL={"lumina.jpg"}
+              logoURL={"lumina-logo.png"}
+            />
+          </CustomBuildingBadge>
+          <CustomBuildingBadge icon="construction" status="ongoing">
+            <GridItem
+              name={"Adra"}
+              link={"/empreendimentos/adra"}
+              imageURL={"adra.jpg"}
+              logoURL={"adra-logo.png"}
+            />
+          </CustomBuildingBadge>
+          <CustomBuildingBadge icon="task_alt" status="sold">
+            <GridItem
+              name={"Aion"}
+              link={"/empreendimentos/aion"}
+              imageURL={"aion.png"}
+              logoURL={"aion-logo.png"}
+            />
+          </CustomBuildingBadge>
+          <CustomBuildingBadge icon="task_alt" status="sold">
+            <GridItem
+              name={"San Diego"}
+              link={"/empreendimentos/san-diego"}
+              imageURL={"sanDiego.jpg"}
+              logoURL={"sanDiego-logo.png"}
+            />
+          </CustomBuildingBadge>
+          <CustomBuildingBadge icon="task_alt" status="sold">
+            <GridItem
+              name={"Porto Madero"}
+              link={"/empreendimentos/porto-madero"}
+              imageURL={"portoMadero.jpg"}
+              logoURL={"portoMadero-logo.png"}
+            />
+          </CustomBuildingBadge>
+          <CustomBuildingBadge icon="task_alt" status="sold">
+            <GridItem
+              name={"Porto Fino"}
+              link={"/empreendimentos/porto-fino"}
+              imageURL={"portoFino.jpg"}
+              logoURL={"portoFino-logo.png"}
+            />
+          </CustomBuildingBadge>
+          <CustomBuildingBadge icon="task_alt" status="sold">
+            <GridItem
+              name={"Varandas do Atlântico"}
+              link={"empreendimentos/varandas-do-atlantico"}
+              imageURL={"varandasAtlantico.jpg"}
+              logoURL={"varandasAtlantico-logo.png"}
+            />
+          </CustomBuildingBadge>
+          <CustomBuildingBadge icon="task_alt" status="sold">
+            <GridItem
+              name={"Rio Maggiore"}
+              link={"empreendimentos/rio-maggiore"}
+              imageURL={"rioMaggiore.jpg"}
+              logoURL={"rioMaggiore-logo.png"}
+            />
+          </CustomBuildingBadge>
+        </FilterManager>
       </Grid>
     </section>
+  );
+}
+function BuildingFilter({ filter, setFilter }) {
+  return (
+    <div className="btn-group flex flex-row justify-center w-full">
+      <button
+        className={`btn no-animation flex items-center ${
+          filter === "" && `bg-burgundy-500 hover:bg-burgundy-400 text-white`
+        }`}
+        onClick={(e) => {
+          e.preventDefault();
+          setFilter("");
+        }}
+      >
+        <svg
+          version="1.0"
+          xmlns="http://www.w3.org/2000/svg"
+          width="96.000000pt"
+          height="96.000000pt"
+          viewBox="0 0 96.000000 96.000000"
+          preserveAspectRatio="xMidYMid meet"
+          className="h-8 w-8 inline-block mr-2"
+        >
+          <g
+            transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)"
+            fill="currentcolor"
+            stroke="none"
+          >
+            <path d="M212 669 c-48 -14 -109 -80 -123 -131 -52 -196 172 -338 327 -204 l39 33 -20 37 c-11 20 -22 36 -24 36 -3 0 -21 -16 -41 -35 -45 -44 -93 -54 -143 -30 -104 49 -75 206 41 222 62 8 100 -21 178 -138 37 -55 83 -114 103 -130 95 -78 238 -56 302 48 19 30 24 52 24 103 0 78 -26 127 -88 168 -34 23 -52 27 -108 27 -59 0 -73 -4 -110 -30 -61 -44 -67 -56 -39 -95 l23 -32 16 21 c62 81 176 78 216 -6 49 -103 -56 -207 -159 -158 -26 12 -53 41 -86 89 -91 132 -111 156 -149 182 -44 29 -126 39 -179 23z" />
+          </g>
+        </svg>
+        Todos
+      </button>
+      <button
+        className={`btn no-animation flex items-center ${
+          filter === "new" &&
+          `bg-brown-sugar-500 text-white hover:bg-brown-sugar-400`
+        }`}
+        onClick={(e) => {
+          e.preventDefault();
+          setFilter("new");
+        }}
+      >
+        <span
+          className={`h-4 w-4 material-symbols-outlined material-symbols-filled inline-block mr-3 relative bottom-1`}
+        >
+          workspace_premium
+        </span>
+        Lançamentos
+      </button>
+      <button
+        className={`btn no-animation flex items-center ${
+          filter === "ongoing" &&
+          `bg-golden-rod-500 text-white hover:bg-golden-rod-400`
+        }`}
+        onClick={(e) => {
+          e.preventDefault();
+          setFilter("ongoing");
+        }}
+      >
+        <span
+          className={`h-4 w-4 material-symbols-outlined material-symbols-filled inline-block mr-3 relative bottom-1`}
+        >
+          construction
+        </span>
+        Em Andamento
+      </button>
+      <button
+        className={`btn no-animation flex items-center ${
+          filter === "sold" && `bg-cadet-blue-500 text-white`
+        }`}
+        onClick={(e) => {
+          e.preventDefault();
+          setFilter("sold");
+        }}
+      >
+        <span
+          className={`h-4 w-4 material-symbols-outlined material-symbols-filled inline-block mr-3 relative bottom-1`}
+        >
+          task_alt
+        </span>
+        Finalizados
+      </button>
+    </div>
+  );
+}
+
+export function FilterManager({ children, filter, filteringProp }) {
+  return (
+    <>
+      {!filter && children}
+      {children.map((child) => {
+        return child.props[`${filteringProp}`] === filter && child;
+      })}
+    </>
   );
 }
