@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { GridItem } from "../components/widgets/GridItem";
 import { Grid } from "../components/widgets/Grid";
 import { CustomBuildingBadge } from "../components/atoms/CustomBadge";
@@ -87,6 +87,31 @@ export default function Buildings() {
   );
 }
 function BuildingFilter({ filter, setFilter }) {
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [pressedButton, setPressedButton] = useState(null) as any;
+  const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
+
+  const handleTouchStart = (event) => {
+    setShowTooltip(true);
+    setPressedButton(event.target);
+  };
+
+  const handleTouchEnd = () => {
+    setShowTooltip(false);
+    setPressedButton(null);
+  };
+
+  const handleTouchMove = (event) => {
+    const touchedButton = document
+      .elementFromPoint(event.touches[0].clientX, event.touches[0].clientY)
+      ?.closest("button");
+
+    if (touchedButton && touchedButton !== pressedButton) {
+      setPressedButton(touchedButton);
+      setFilter(touchedButton.dataset.filter);
+    }
+  };
+
   return (
     <div className="btn-group flex flex-row justify-center w-11/12 mx-auto">
       <button
@@ -98,12 +123,10 @@ function BuildingFilter({ filter, setFilter }) {
           e.preventDefault();
           setFilter("");
         }}
-        onTouchStart={(e) => {
-          console.log("touched me}");
-        }}
-        onTouchMoveCapture={(e) => {
-          console.log("now you are moving me");
-        }}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchMove={handleTouchMove}
+        data-filter=""
       >
         <svg
           version="1.0"
@@ -137,9 +160,10 @@ function BuildingFilter({ filter, setFilter }) {
           e.preventDefault();
           setFilter("new");
         }}
-        onTouchMoveCapture={(e) => {
-          console.log("now you are moving me");
-        }}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchMove={handleTouchMove}
+        data-filter="new"
       >
         <span
           className={`h-4 w-4 material-symbols-outlined material-symbols-filled inline-block mr-3 relative bottom-1`}
@@ -161,6 +185,10 @@ function BuildingFilter({ filter, setFilter }) {
           e.preventDefault();
           setFilter("ongoing");
         }}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchMove={handleTouchMove}
+        data-filter="ongoing"
       >
         <span
           className={`h-4 w-4 material-symbols-outlined material-symbols-filled inline-block mr-3 relative bottom-1`}
@@ -175,12 +203,17 @@ function BuildingFilter({ filter, setFilter }) {
       </button>
       <button
         className={`btn btn-sm lg:btn-md no-animation flex items-center ${
-          filter === "sold" && `bg-cadet-blue-500 text-white flex-grow`
+          filter === "sold" &&
+          `bg-cadet-blue-500 text-white flex-grow hover:bg-cadet-blue-400`
         }`}
         onClick={(e) => {
           e.preventDefault();
           setFilter("sold");
         }}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchMove={handleTouchMove}
+        data-filter="sold"
       >
         <span
           className={`h-4 w-4 material-symbols-outlined material-symbols-filled inline-block mr-3 relative bottom-1`}
