@@ -5,12 +5,12 @@ import { TableHome } from "../pages/TableHome";
 import { NotFound } from "../pages/NotFound";
 
 import { PageLayout } from "../components/layout/PageLayout";
-import { Building } from "../pages/Building";
+import { BuildingTable } from "../pages/BuildingTable";
 import { ThirdParty } from "../pages/ThirdParty";
 import { About } from "../pages/About";
 import Home from "../pages/Home";
-import Buildings from "../pages/Buildings";
-
+import { Buildings } from "../pages/Buildings";
+import { Building } from "../pages/Building";
 export function AppRouter() {
   return (
     <Router>
@@ -25,6 +25,11 @@ export function AppRouter() {
           <Route
             path="/empreendimentos"
             element={<Buildings />}
+            errorElement={<NotFound />}
+          />
+          <Route
+            path="/empreendimentos/:building"
+            element={<Building />}
             errorElement={<NotFound />}
           />
         </Route>
@@ -47,7 +52,7 @@ export function AppRouter() {
           <Route
             path="/tabelas/:link"
             //prettier-ignore
-            element={<Building />}
+            element={<BuildingTable />}
             errorElement={<NotFound />}
           />
 

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { GridItem } from "../components/widgets/GridItem";
 import { Grid } from "../components/widgets/Grid";
 import { CustomBuildingBadge } from "../components/atoms/CustomBadge";
 import { GKDivider } from "../components/atoms/GKDivider";
+import { usePageTitle } from "../utils/webisteUtils";
 
-export default function Buildings() {
-  const [filter, setFilter] = React.useState("");
+export function Buildings() {
+  const [filter, setFilter] = useState("");
+  usePageTitle("Empreendimentos - GK Empreedimentos");
 
   return (
     <section className="lg:mt-6 mt-6 lg:w-9/12 mx-auto">
@@ -86,18 +88,18 @@ export default function Buildings() {
     </section>
   );
 }
+
+//TODO: Add prop types
+//TODO extract component
+//TODO: Make component more generic
 function BuildingFilter({ filter, setFilter }) {
-  const [showTooltip, setShowTooltip] = useState(false);
   const [pressedButton, setPressedButton] = useState(null) as any;
-  const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
 
   const handleTouchStart = (event) => {
-    setShowTooltip(true);
     setPressedButton(event.target);
   };
 
   const handleTouchEnd = () => {
-    setShowTooltip(false);
     setPressedButton(null);
   };
 
@@ -239,7 +241,8 @@ function BuildingFilter({ filter, setFilter }) {
     </div>
   );
 }
-
+//TODO: Add prop types
+//TODO extract component
 export function FilterManager({ children, filter, filteringProp }) {
   const filteredChildren = filter
     ? children.filter((child) => child.props[filteringProp] === filter)

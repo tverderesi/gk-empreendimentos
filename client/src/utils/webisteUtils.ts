@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 export function generateLink(name: string) {
   //TODO: Test edge cases and implement solution
   const baseUrl = "/";
@@ -8,4 +9,10 @@ export function generateLink(name: string) {
     .toLowerCase();
 
   return `${baseUrl}${safeName}`;
+}
+
+export function usePageTitle(title: string) {
+  useEffect(() => {
+    document.title = title;
+  }, []);
 }

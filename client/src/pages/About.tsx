@@ -1,6 +1,8 @@
 import { GKDivider } from "../components/atoms/GKDivider";
+import { usePageTitle } from "../utils/webisteUtils";
 
 export function About() {
+  usePageTitle("Sobre - GK Empreedimentos");
   return (
     <section className="w-full lg:w-3/4 text-center mx-auto mt-10 lg:mt-16">
       <h1 className="text-4xl font-semibold text-primary uppercase">

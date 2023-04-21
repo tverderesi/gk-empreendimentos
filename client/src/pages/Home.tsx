@@ -1,6 +1,8 @@
 import { ResponsiveCarousel } from "../components/widgets/ResponsiveCarousel";
 
+import { usePageTitle } from "../utils/webisteUtils";
 export default function Home() {
+  usePageTitle("GK Empreendimentos");
   return (
     <ResponsiveCarousel
       hasText
