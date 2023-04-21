@@ -4,6 +4,7 @@ import { useContext } from "react";
 import AppContext from "../../context/AppContext";
 import { MobileMenu } from "./MobileMenu";
 import { ListDropDown } from "../atoms/ListDropDown";
+import { NavItem } from "../atoms/NavItem";
 
 export function Navbar() {
   const { menuOpen, dispatch } = useContext(AppContext);
@@ -20,15 +21,14 @@ export function Navbar() {
   };
 
   return (
-    <header className="custom-navbar">
+    <header className="navbar py-[1rem] fixed  top-0 z-[100] h-24 drop-shadow-xl min-w-[100vw] bg-eerie-black-900/75 backdrop-blur-2xl blur-fallback">
       <NavLink
         to="/"
-        className="btn btn-ghost normal-case h-full p-2 no-animation flex-grow mx-10 lg:mx-0 lg:flex-grow-0"
+        className="h-full p-2 flex-grow justify-start lg:mx-0 lg:flex-grow-0 no-animation"
       >
         <LogoLetters />
       </NavLink>
-
-      <div className="navbar-center hidden lg:flex justify-center">
+      <div className="hidden lg:flex justify-center">
         <ul className="menu menu-horizontal p-0 my-auto">
           <NavItem title="Início" link="/" />
           <NavItem title="Sobre A GK" link="/sobre" />
@@ -46,24 +46,6 @@ export function Navbar() {
     </header>
   );
 }
-function NavItem({ title, link }: { title: string; link: string }) {
-  const { dispatch } = useContext(AppContext);
-  const handleClick = () => {
-    dispatch({ type: "CLOSE_MENU" });
-  };
-  return (
-    <li>
-      <NavLink
-        to={link}
-        className="btn btn-ghost btn-ghost-primary rounded-lg uppercase  tracking-widest font-medium mx-2 px-2 py-1 my-auto"
-        onClick={handleClick}
-      >
-        {title}
-      </NavLink>
-    </li>
-  );
-}
-
 {
   /* {population.length > 5 ? (
             <ListDropDown>

@@ -14,7 +14,7 @@ export const MobileMenu: MobileMenuType = ({
 
   const classes = `${
     menuOpen ? "flex flex-col" : "hidden"
-  } overflow-y-scroll bg-[#1a1a1afb] w-screen h-[calc(100vh-6rem)] backdrop-blur-xl bg-blend-overlay 
+  } overflow-y-scroll bg-eerie-black-900/[0.98] w-screen h-[calc(100vh-6rem)] backdrop-blur-xl bg-blend-overlay blur-fallback 
   items-center absolute top-24 left-0`;
   return (
     <>
@@ -23,50 +23,79 @@ export const MobileMenu: MobileMenuType = ({
         className="btn btn-ghost lg:hidden w-auto"
         onClick={handleMenuToggle}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className={`h-5 w-5  transition-all`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d={menuOpen ? "M4,4 L20,20 M4,20 L20,4" : "M4 6h16M4 12h8m-8 6h16"}
-          />
-        </svg>
+        <span className="material-symbols-outlined">
+          {menuOpen ? <>close</> : <>menu</>}
+        </span>
       </label>
       <div className={classes} onBlur={handleBlur}>
-        <Link
-          to="/"
-          className="text-2xl pt-10 pb-5 text-white tracking-wider font-light uppercase"
-          onClick={handleClick}
-        >
-          Home
-        </Link>
-        {population.length > 5 ? (
-          <ElementDropdown population={population} handleClick={handleClick} />
-        ) : (
-          <ItemsList population={population} handleClick={handleClick} />
-        )}
-
-        <Link
-          to="/tabelas/folders"
-          className="text-2xl py-5 text-white tracking-wider font-light uppercase"
-          onClick={handleClick}
-        >
-          Folders e Tabelas
-        </Link>
-        <Link
-          to="/tabelas/terceiros"
-          className="text-2xl mb-10  pt-5 text-white tracking-wider font-light uppercase"
-          onClick={handleClick}
-        >
-          Imóveis de Terceiros
-        </Link>
+        <MobileNavItem title="Início" link="/" handleClick={handleClick} />
+        <MobileNavItem
+          title="Sobre A GK"
+          link="/sobre"
+          handleClick={handleClick}
+        />
+        <MobileNavItem
+          title="Empreendimentos"
+          link="/empreendimentos"
+          handleClick={handleClick}
+        />
+        <MobileNavItem
+          title="Contato"
+          link="/contato"
+          handleClick={handleClick}
+        />
+        <MobileNavItem
+          title="Oportunidades"
+          link="/Oportunidades"
+          handleClick={handleClick}
+        />
+        <MobileNavItem
+          title="Histórico de Obras"
+          link="/historico"
+          handleClick={handleClick}
+        />
       </div>
     </>
   );
 };
+
+function MobileNavItem({
+  handleClick,
+  title,
+  link,
+}: {
+  handleClick: () => void;
+  title: string;
+  link: string;
+}) {
+  return (
+    <Link
+      to={link}
+      className="text-2xl pt-10 pb-5 text-white tracking-widest font-medium uppercase"
+      onClick={handleClick}
+    >
+      {title}
+    </Link>
+  );
+}
+
+// {population.length > 5 ? (
+//   <ElementDropdown population={population} handleClick={handleClick} />
+// ) : (
+//   <ItemsList population={population} handleClick={handleClick} />
+// )}
+
+// <Link
+//   to="/tabelas/folders"
+//   className="text-2xl py-5 text-white tracking-wider font-light uppercase"
+//   onClick={handleClick}
+// >
+//   Folders e Tabelas
+// </Link>
+// <Link
+//   to="/tabelas/terceiros"
+//   className="text-2xl mb-10  pt-5 text-white tracking-wider font-light uppercase"
+//   onClick={handleClick}
+// >
+//   Imóveis de Terceiros
+// </Link>

@@ -11,6 +11,7 @@ import { About } from "../pages/About";
 import Home from "../pages/Home";
 import { Buildings } from "../pages/Buildings";
 import { Building } from "../pages/Building";
+
 export function AppRouter() {
   return (
     <Router>
@@ -28,7 +29,7 @@ export function AppRouter() {
             errorElement={<NotFound />}
           />
           <Route
-            path="/empreendimentos/:building"
+            path="/empreendimentos/:buildingName"
             element={<Building />}
             errorElement={<NotFound />}
           />

@@ -57,6 +57,18 @@ module.exports = {
           800: "#722631",
           900: "#4d1f23",
         },
+        "eerie-black": {
+          50: "#aaaaaa",
+          100: "#9a9a9a",
+          200: "#8a8a8a",
+          300: "#7a7a7a",
+          400: "#6a6a6a",
+          500: "#5a5a5a",
+          600: "#4a4a4a",
+          700: "#3a3a3a",
+          800: "#2a2a2a",
+          900: "#1a1a1a",
+        },
       },
 
       dropShadow: {
@@ -65,6 +77,11 @@ module.exports = {
           "0 -8px -5px rgba(0, 0, 0, 0.08)",
         ],
       },
+      padding: {
+        "p-18": "4.5rem",
+        "-p-16": "-4rem",
+      },
+      margin: { "-m-16": "-4rem" },
     },
   },
   daisyui: {

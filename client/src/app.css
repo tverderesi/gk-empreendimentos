@@ -41,15 +41,11 @@ li:hover > a > svg.rotation {
   transform: rotate(180deg);
 }
 
-.custom-navbar {
-  @apply navbar bg-cadet-blue-400  py-[1rem] fixed w-full top-0 z-[100] h-24 drop-shadow-xl;
-
-  background-color: rgba(26, 26, 26, 0.75);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
+.btn-ghost:hover {
+  @apply transition-all;
+  @apply transform scale-100;
 }
-
-.custom-navbar::before {
+.blur-fallback::before {
   content: "";
   position: absolute;
   top: 0;

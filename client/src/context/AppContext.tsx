@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useReducer, useState } from "react";
-import { lumina } from "../dummyData/lumina";
+import { lumina } from "../dummyData/luminaTable";
 import { AppReducer } from "./AppReducer";
+import { buildings } from "../dummyData/buildings";
 
 const AppContext = createContext({} as any);
 
@@ -9,6 +10,7 @@ export const AppProvider = ({ children }: { children?: ReactNode }) => {
     population: [lumina],
     link: "",
     menuOpen: false,
+    buildings: buildings,
   };
 
   const [state, dispatch] = useReducer(AppReducer, initialState);

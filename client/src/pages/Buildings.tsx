@@ -14,7 +14,7 @@ export function Buildings() {
       <h1 className="text-2xl lg:text-5xl font-semibold text-white uppercase text-center tracking-widest">
         Empreendimentos
       </h1>
-      <GKDivider className="w-11/12 mx-auto mb-10" />
+      <GKDivider className="w-11/12 mx-auto my-10" />
 
       <BuildingFilter filter={filter} setFilter={setFilter} />
       <Grid className="transition-all duration-500 ease-in-out">
@@ -115,7 +115,7 @@ function BuildingFilter({ filter, setFilter }) {
   };
 
   return (
-    <div className="btn-group flex flex-row justify-center w-11/12 mx-auto">
+    <div className="btn-group flex flex-row justify-center w-10/12 mx-auto">
       <button
         className={`btn lg:btn-md btn-sm text-sm no-animation flex items-center ${
           filter === "" &&
