@@ -12,6 +12,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.btn-group > .btn:hover {
+  @apply transition-all;
+  @apply transform scale-100;
+}
 li:hover > a > svg.rotation {
   transform: rotate(180deg);
 }

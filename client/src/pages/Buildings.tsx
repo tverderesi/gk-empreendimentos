@@ -117,7 +117,7 @@ function BuildingFilter({ filter, setFilter }) {
       <button
         className={`btn lg:btn-md btn-sm text-sm no-animation flex items-center ${
           filter === "" &&
-          `bg-burgundy-500 hover:bg-burgundy-400 text-white flex-grow`
+          `bg-burgundy-500 hover:bg-burgundy-400 text-white  flex-grow lg:flex-grow-0`
         }`}
         onClick={(e) => {
           e.preventDefault();
@@ -145,16 +145,19 @@ function BuildingFilter({ filter, setFilter }) {
             <path d="M212 669 c-48 -14 -109 -80 -123 -131 -52 -196 172 -338 327 -204 l39 33 -20 37 c-11 20 -22 36 -24 36 -3 0 -21 -16 -41 -35 -45 -44 -93 -54 -143 -30 -104 49 -75 206 41 222 62 8 100 -21 178 -138 37 -55 83 -114 103 -130 95 -78 238 -56 302 48 19 30 24 52 24 103 0 78 -26 127 -88 168 -34 23 -52 27 -108 27 -59 0 -73 -4 -110 -30 -61 -44 -67 -56 -39 -95 l23 -32 16 21 c62 81 176 78 216 -6 49 -103 -56 -207 -159 -158 -26 12 -53 41 -86 89 -91 132 -111 156 -149 182 -44 29 -126 39 -179 23z" />
           </g>
         </svg>
-        {!filter && (
-          <span className="ml-2 transition-all ease-in-out duration-200">
-            Todos
-          </span>
-        )}
+
+        <span
+          className={`${
+            !filter ? "" : "hidden lg:block"
+          } ml-2 transition-all ease-in-out duration-200`}
+        >
+          Todos
+        </span>
       </button>
       <button
         className={`btn btn-sm lg:btn-md no-animation flex items-center ${
           filter === "new" &&
-          `bg-brown-sugar-500 text-white hover:bg-brown-sugar-400 flex-grow`
+          `bg-brown-sugar-500 text-white hover:bg-brown-sugar-400  flex-grow lg:flex-grow-0`
         }`}
         onClick={(e) => {
           e.preventDefault();
@@ -170,16 +173,18 @@ function BuildingFilter({ filter, setFilter }) {
         >
           workspace_premium
         </span>
-        {filter === "new" && (
-          <span className="ml-2 transition-all ease-in-out duration-200">
-            Lançamentos
-          </span>
-        )}
+        <span
+          className={`${
+            filter === "new" ? "" : "hidden lg:block"
+          } ml-2 transition-all ease-in-out duration-200`}
+        >
+          Lançamentos
+        </span>
       </button>
       <button
         className={`btn btn-sm lg:btn-md no-animation flex items-center ${
           filter === "ongoing" &&
-          `bg-golden-rod-500 text-white hover:bg-golden-rod-400 flex-grow`
+          `bg-golden-rod-500 text-white hover:bg-golden-rod-400  flex-grow lg:flex-grow-0`
         }`}
         onClick={(e) => {
           e.preventDefault();
@@ -195,16 +200,18 @@ function BuildingFilter({ filter, setFilter }) {
         >
           construction
         </span>
-        {filter === "ongoing" && (
-          <span className="ml-2 transition-all ease-in-out duration-200">
-            Em Andamento
-          </span>
-        )}
+        <span
+          className={`${
+            filter === "ongoing" ? "" : "hidden lg:block"
+          } ml-2 transition-all ease-in-out duration-200`}
+        >
+          Em Andamento
+        </span>
       </button>
       <button
         className={`btn btn-sm lg:btn-md no-animation flex items-center ${
           filter === "sold" &&
-          `bg-cadet-blue-500 text-white flex-grow hover:bg-cadet-blue-400`
+          `bg-cadet-blue-500 text-white flex-grow lg:flex-grow-0 hover:bg-cadet-blue-400`
         }`}
         onClick={(e) => {
           e.preventDefault();
@@ -220,11 +227,14 @@ function BuildingFilter({ filter, setFilter }) {
         >
           task_alt
         </span>
-        {filter === "sold" && (
-          <span className="ml-2 transition-all ease-in-out duration-200">
-            Finalizados
-          </span>
-        )}
+
+        <span
+          className={`${
+            filter === "sold" ? "" : "hidden lg:block"
+          } ml-2 transition-all ease-in-out duration-200`}
+        >
+          Finalizados
+        </span>
       </button>
     </div>
   );
