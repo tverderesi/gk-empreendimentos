@@ -24,16 +24,18 @@ export function Building() {
       <section className="flex flex-col items">
         <BackButton />
         <article className="pt-16">
-          <div className="h-52 lg:h-96 relative">
+          <figure className="h-52 lg:h-96 relative">
             <img
               src={`../buildings/${building.title}/${building.title}.jpg`}
               alt={building.title}
               className="-mt-16 w-full h-52 lg:h-96 object-cover"
             />
-            <h1 className="w-full text-center text-6xl font-semibold uppercase tracking-wider text-white absolute bottom-0 bg-gradient-to-t from-slate-900/50">
-              {building.title}
-            </h1>
-          </div>
+            <div className="w-full text-center font-semibold uppercase tracking-wider text-white absolute bottom-0 bg-gradient-to-t from-slate-900/80 py-2">
+              <h1 className="text-6xl mb-1">{building.title}</h1>
+              <h2 className="text-xl">{building.tagLine}</h2>
+            </div>
+          </figure>
+          <div className="mx-auto px-5 lg:px-0">{building.description}</div>
         </article>
       </section>
     );
