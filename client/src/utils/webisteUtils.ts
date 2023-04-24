@@ -16,3 +16,7 @@ export function usePageTitle(title: string) {
     document.title = title;
   }, []);
 }
+
+export function splitString(text, separator) {
+  return text ? text.split(separator) : [];
+}

@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { usePageTitle } from "../utils/webisteUtils";
+import { splitString, usePageTitle } from "../utils/webisteUtils";
 import { useContext } from "react";
 import AppContext from "../context/AppContext";
 import { NotFound } from "./NotFound";
@@ -20,6 +20,8 @@ export function Building() {
     }GK Empreedimentos`
   );
   if (building) {
+    // const separetedText = splitString(building.description, "\n");
+    const text = [building.description];
     return (
       <section className="flex flex-col items">
         <BackButton />
@@ -35,7 +37,25 @@ export function Building() {
               <h2 className="text-xl">{building.tagLine}</h2>
             </div>
           </figure>
-          <div className="mx-auto px-5 lg:px-0">{building.description}</div>
+          <section className="text-white p-6">
+            <h3 className="text-2xl uppercase tracking-wide font-bold text-center">
+              O empreendimento
+            </h3>
+
+            <div className="prose text-white text-justify text-lg py-5 snap-y snap-mandatory">
+              {text}
+            </div>
+          </section>
+          <section className="text-white p-6">
+            <h3 className="text-2xl uppercase tracking-wide font-bold text-center">
+              Diferenciais
+            </h3>
+            <ul>
+              {building.features.map((feature, index) => {
+                return <li>{feature}</li>;
+              })}
+            </ul>
+          </section>
         </article>
       </section>
     );

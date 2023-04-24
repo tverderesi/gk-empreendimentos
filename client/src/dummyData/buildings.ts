@@ -2,7 +2,7 @@ const lumina = {
   title: "lumina",
   tagLine: "Sua vida onde você merece.",
   description:
-    "O que antes era destino de férias hoje é a materialização de um desejo antigo: trabalhar, morar e viver em equilibro com a natureza e o bem-estar. Para tornar tudo isso possível, a gk transformou uma localização privilegiada no requisitado litoral catarinense em ponto de referência para sua nova vida. O resultado está agora diante de seus olhos.",
+    "O que antes era destino de férias hoje é a materialização de um desejo antigo: trabalhar, morar e viver em equilibro com a natureza e o bem-estar.\n  Para tornar tudo isso possível, a GK transformou uma localização privilegiada no requisitado litoral catarinense em ponto de referência para sua nova vida.\n O resultado está agora diante de seus olhos.",
   logo: "lumina-logo.png",
   address: "Av. Leopoldo Zarling, 1890, Bombas, Bombinhas – SC",
   features: [
