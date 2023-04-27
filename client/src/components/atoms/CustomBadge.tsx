@@ -3,7 +3,7 @@ import React from "react";
 export function CustomBuildingBadge({
   children,
   className = "",
-  icon,
+  icon = "question_mark",
   status = "fallback",
 }) {
   const statusColor = {
@@ -14,9 +14,10 @@ export function CustomBuildingBadge({
   };
 
   return (
-    <div className="indicator">
+    <div className="indicator" data-testid="custom-badge">
       <span
-        className={`indicator-item badge rounded-full h-7 w-7 lg:h-14 lg:w-14 border-none material-symbols-outlined material-symbols-filled text-xl lg:text-4xl text-white ${statusColor[status]}`}
+        data-testid="badge-icon"
+        className={`indicator-item badge rounded-full h-7 w-7 lg:h-14 lg:w-14 border-none material-symbols-outlined material-symbols-filled text-xl lg:text-4xl text-white ${statusColor[status]} ${className}`}
       >
         {icon}
       </span>
