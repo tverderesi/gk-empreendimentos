@@ -17,3 +17,5 @@ describe("mockModule", () => {
     expect(myModule).toEqual("http://localhost:3000");
   });
 });
+
+export {};
