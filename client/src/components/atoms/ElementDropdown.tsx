@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DropdownType } from "../../Types";
+import { DropdownType } from "../../../../gk-next/src/Types";
 import { ItemsList } from "../widgets/ItemsList";
 
 export const ElementDropdown: DropdownType = ({ population, handleClick }) => {

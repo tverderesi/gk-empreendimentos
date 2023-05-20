@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Logo from "../atoms/Logo";
 import { useContext } from "react";
 import AppContext from "../../context/AppContext";
-import { GridItemType } from "../../Types";
+import { GridItemType } from "../../../../gk-next/src/Types";
 
 export const GridItem: GridItemType = ({
   name,

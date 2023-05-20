@@ -1,4 +1,4 @@
-import { Apartment } from "../../Types";
+import { Apartment } from "../../../../gk-next/src/Types";
 import { useState } from "react";
 type ApartmentTableProps = {
   apartments: Apartment[];

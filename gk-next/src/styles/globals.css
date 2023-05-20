@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "daisyui/dist/full.css";
+
+body {
+  overscroll-behavior: none;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.btn-group > .btn:hover {
+  @apply transition-all;
+  @apply transform scale-100;
+}
+
+li:hover > a > svg.rotation {
+  transform: rotate(180deg);
+}
+
+.h-18 {
+  height: 4.5rem;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.slide-in-top {
+  animation: slide-in-top 0.6s cubic-bezier(0.85, 0, 0.15, 1) both;
+}
+
+.blur-edge::after {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.state-rotate {
+  transform: rotate(180deg);
+}
+
+.btn-ghost:hover {
+  @apply transition-all;
+  @apply transform scale-100;
+}
+
+.blur-fallback::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1a1a1a;
+  filter: opacity(0);
+  z-index: -1;
+}
+
+.custom-footer {
+  @apply flex flex-col items-center justify-between lg:justify-start w-screen lg:flex-row lg:min-h-[4.5rem] p-6 font-semibold text-sm drop-shadow-neg-xl flex-wrap;
+  background-color: #1a1a1a;
+}
+
+.custom-footer > * {
+  @apply mx-2 my-1 text-center;
+}
+
+.custom-footer span {
+  @apply text-base;
+}
+
+.custom-footer span.material-symbols-outlined {
+  @apply text-lg mr-1;
+}
+
+.btn-cadet-blue {
+  @apply btn btn-primary bg-cadet-blue-500 text-white;
+}
+
+.custom-footer a:hover {
+  @apply text-cadet-blue-500 !important;
+}
+
+.custom-footer svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.nav-link {
+  text-align: center !important;
+}
+
+.btn:hover {
+  @apply transition-all;
+  @apply transform scale-105;
+}
+
+.btn-ghost-primary:hover {
+  @apply btn-ghost;
+  @apply bg-primary-focus !important;
+  @apply text-white;
+}
+
+.grid-item {
+  @apply transition-all relative p-3 h-[calc((100vw-5rem)/2)] w-[calc(50vw-2.5rem)] md:h-[calc((100vw-5rem)/3)] md:w-[calc((100vw-5rem)/3)] lg:h-72 lg:w-72 bg-cadet-blue-600 flex items-center text-primary-content justify-center rounded-xl drop-shadow-lg text-center;
+}
+
+.grid-item:hover {
+  transform: scale(1.03);
+  transition: all 0.35s ease-in-out;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.03);
+  transition: all 0.35s ease-in-out;
+}
+
+.scroll-snap-center {
+  scroll-snap-align: center;
+}
+
+.scroll-snap {
+  scroll-snap-type: mandatory;
+  scroll-snap-stop: always;
+}
+
+.material-symbols-filled {
+  font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 200, "opsz" 48;
+}
+
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1%);
+    transform: translateY(-1%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1%);
+    transform: translateY(-1%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

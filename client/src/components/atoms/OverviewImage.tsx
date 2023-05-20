@@ -1,4 +1,4 @@
-import { OverviewImageType } from "../../Types";
+import { OverviewImageType } from "../../../../gk-next/src/Types";
 
 export const OverviewImage: OverviewImageType = ({
   item: { image, title, logo },
