@@ -5,6 +5,7 @@ import AppContext from "../../context/AppContext";
 import { MobileMenu } from "./MobileMenu";
 import { ListDropDown } from "../atoms/ListDropDown";
 import { NavItem } from "../atoms/NavItem";
+import Link from "next/link";
 
 export function Navbar() {
   const { menuOpen, dispatch } = useContext(AppContext);
@@ -26,12 +27,12 @@ export function Navbar() {
 
   return (
     <header className="navbar py-[1rem] fixed  top-0 z-[100] h-24 drop-shadow-xl min-w-[100vw] bg-eerie-black-900/75 backdrop-blur-2xl blur-fallback">
-      <a
+      <Link
         href="/"
         className="h-full p-2 flex-grow justify-start lg:mx-0 lg:flex-grow-0 no-animation"
       >
         <LogoLetters />
-      </a>
+      </Link>
       <div className="hidden lg:flex justify-center">
         <ul className="menu menu-horizontal p-0 my-auto">
           <NavItem title="Início" link="/" currentAddress={currentAddress} />

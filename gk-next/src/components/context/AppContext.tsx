@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useReducer, useState } from "react";
-import { lumina } from "../dummyData/luminaTable";
+import { lumina } from "~/dummyData/luminaTable";
 import { AppReducer } from "./AppReducer";
-import { buildings } from "../dummyData/buildings";
+import { buildings } from "~/dummyData/buildings";
 
 const AppContext = createContext({} as any);
 

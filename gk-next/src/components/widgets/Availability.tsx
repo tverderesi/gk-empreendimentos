@@ -1,7 +1,7 @@
 import {
   availabilityCalc,
   countApartmentsPerTower,
-} from "../../utils/buildingUtils";
+} from "~/utils/buildingUtils";
 
 export function Availability({ building }) {
   const towerApartments = countApartmentsPerTower(building);

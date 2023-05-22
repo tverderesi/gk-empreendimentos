@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useContext } from "react";
 import AppContext from "../../context/AppContext";
 import { MobileMenuType } from "../../Types";
@@ -40,7 +40,7 @@ export const MobileMenu: MobileMenuType = ({
       </label>
       <div className={classes} onBlur={handleBlur}>
         <Link
-          to="/"
+          href="/"
           className="text-2xl pt-10 pb-5 text-white tracking-wider font-light uppercase"
           onClick={handleClick}
         >
@@ -53,14 +53,14 @@ export const MobileMenu: MobileMenuType = ({
         )}
 
         <Link
-          to="/tabelas/folders"
+          href="/tabelas/folders"
           className="text-2xl py-5 text-white tracking-wider font-light uppercase"
           onClick={handleClick}
         >
           Folders e Tabelas
         </Link>
         <Link
-          to="/tabelas/terceiros"
+          href="/tabelas/terceiros"
           className="text-2xl mb-10  pt-5 text-white tracking-wider font-light uppercase"
           onClick={handleClick}
         >
