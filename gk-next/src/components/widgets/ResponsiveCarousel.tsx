@@ -43,7 +43,10 @@ export function ResponsiveCarousel({
                 </div>
                 <GKDivider className="h-1/10 w-3/4 md:w-1/2 mx-auto" />
                 <div className="h-[45%] pt-6 w-3/4 px-1 flex flex-col justify-start ">
-                  <p className="text-white text-2xl md:text-4xl uppercase tracking-wide font-semibold text-center ">
+                  <p
+                    className="text-white text-2xl md:text-4xl uppercase tracking-wide font-semibold text-center "
+                    key={idx}
+                  >
                     {parts
                       ? parts.map((part, index) => (
                           <>

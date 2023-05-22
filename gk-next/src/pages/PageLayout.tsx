@@ -1,3 +1,4 @@
+import { BackgroundImage } from "~/components/atoms/BackgroundImage";
 import { Footer } from "~/components/widgets/Footer";
 import { Navbar } from "~/components/widgets/Navbar";
 
@@ -8,6 +9,7 @@ export default function Layout({ children }) {
       <main className="pt-24">
         {children} <Footer />
       </main>
+      <BackgroundImage />
     </>
   );
 }
