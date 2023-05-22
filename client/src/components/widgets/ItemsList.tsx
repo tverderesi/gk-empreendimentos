@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ItemsListType } from "../../Types";
+import { ItemsListType } from "../../../../gk-next/src/Types";
 
 export const ItemsList: ItemsListType = ({ population, handleClick }) => {
   return (

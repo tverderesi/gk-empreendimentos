@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import AppContext from "../../context/AppContext";
-import { GridItemType } from "../../Types";
+import { GridItemType } from "../../../../gk-next/src/Types";
 
 export function Grid({
   children,

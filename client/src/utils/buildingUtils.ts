@@ -1,4 +1,4 @@
-import { Apartment, TowerAvailability } from "../Types";
+import { Apartment, TowerAvailability } from "../../../gk-next/src/Types";
 export function availabilityCalc({
   apartments,
 }: {
