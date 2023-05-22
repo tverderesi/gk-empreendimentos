@@ -1,14 +1,12 @@
-import { Link } from "react-router-dom";
 import Logo from "../atoms/Logo";
-import { useContext } from "react";
-import AppContext from "../../context/AppContext";
+import slugify from "slugify";
 import { GridItemType } from "../../Types";
+import Image from "next/image";
 
 export const GridItem: GridItemType = ({
   name,
-  link,
-  imageURL = "",
-  logoURL = "",
+  imgSrc,
+  logoSrc,
   className = "",
 }) => {
   const transformedName = name
@@ -18,21 +16,23 @@ export const GridItem: GridItemType = ({
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/\s+/g, "-");
 
+  const createSlug = (name: string) => {
+    return `/empreendimentos/${slugify(name, {
+      trim: true,
+      lower: true,
+    })} `;
+  };
   return (
-    <Link to={`${link}`} className={`grid-item ${className}`}>
-      {imageURL ? (
+    <a href={createSlug(name)} className={`grid-item ${className}`}>
+      {imgSrc ? (
         <div className="absolute top-0   w-full h-full ">
-          <img
-            src={`/buildings/${transformedName}/${imageURL}`}
+          <Image
+            src={imgSrc}
             alt={name}
             className="p-0 absolute  w-full h-full justify-self-center self-center object-cover  rounded-xl drop-shadow-xl"
           />
-          <div className="pt-2 absolute bottom-0 bg-gradient-to-t from-slate-900/90 border-0 to-transparent rounded-xl rounded-t-none">
-            <img
-              src={`/buildings/${transformedName}/${logoURL}`}
-              alt={name}
-              className="w-full mx-auto mb-5  px-5"
-            />
+          <div className=" w-full pt-2 absolute bottom-0 bg-gradient-to-t from-slate-900/90 border-0 to-transparent rounded-xl rounded-t-none">
+            <Image src={logoSrc} alt={name} className="mx-auto mb-5  px-5" />
           </div>
         </div>
       ) : (
@@ -43,6 +43,6 @@ export const GridItem: GridItemType = ({
           <Logo shadow={true} className="z-[0] p-6 opacity-10 relative" />
         </>
       )}
-    </Link>
+    </a>
   );
 };

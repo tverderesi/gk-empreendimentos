@@ -1,26 +1,24 @@
 import Image from "next/image";
 import { GKDivider } from "../atoms/GKDivider";
+import useLeftScroll from "../hooks/useLeftScroll";
+import { CarouselImage } from "~/Types";
 
 export function ResponsiveCarousel({
   images,
-  className = "",
   hasText = false,
+  className = "",
+  ...props
 }: {
-  images: {
-    src: string;
-    alt: string;
-    title?: string;
-    text?: string;
-    link?: string;
-  }[];
-  className?: string;
+  images: CarouselImage[];
   hasText?: boolean;
+  className?: string;
+  [key: string]: any;
 }) {
-  return (
-    <div className={`carousel ${className}`}>
-      {images.map(({ src, alt, title, text, link }, idx) => {
-        const parts = text ? text.split("\n") : ""; // split the text into two parts
+  const CarouselImageScroll = useLeftScroll(images);
 
+  return (
+    <div className={`carousel ${className}`} id="carousel" {...props}>
+      {images.map(({ src, alt, title, text, link }, idx) => {
         return (
           <div
             id={`slide${idx + 1}`}
@@ -44,17 +42,10 @@ export function ResponsiveCarousel({
                 <GKDivider className="h-1/10 w-3/4 md:w-1/2 mx-auto" />
                 <div className="h-[45%] pt-6 w-3/4 px-1 flex flex-col justify-start ">
                   <p
-                    className="text-white text-2xl md:text-4xl uppercase tracking-wide font-semibold text-center "
+                    className="text-white text-2xl md:text-4xl uppercase tracking-wide font-semibold text-center whitespace-break-spaces"
                     key={idx}
                   >
-                    {parts
-                      ? parts.map((part, index) => (
-                          <>
-                            {part}
-                            {index < parts.length - 1 && <br />}
-                          </>
-                        ))
-                      : ""}
+                    {text}
                   </p>
                   <a
                     className="btn btn-cadet-blue m-min-h-6 text-xl lg:w-1/4 lg:mx-auto justify-self-end mt-auto mb-12 px-3 py-2"
@@ -71,17 +62,7 @@ export function ResponsiveCarousel({
               <button
                 className="btn btn-circle"
                 onClick={(e) => {
-                  const targetId = `slide${idx === 0 ? images.length : idx}`;
-                  const targetElement = document.getElementById(targetId);
-
-                  if (targetElement) {
-                    targetElement.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
-                  }
-                  e.preventDefault();
-                  e.stopPropagation();
+                  CarouselImageScroll(idx, "left");
                 }}
               >
                 ❮
@@ -89,20 +70,7 @@ export function ResponsiveCarousel({
               <button
                 className="btn btn-circle"
                 onClick={(e) => {
-                  const targetId = `slide${
-                    idx + 1 === images.length ? 1 : idx + 2
-                  }`;
-                  const targetElement = document.getElementById(targetId);
-
-                  if (targetElement) {
-                    targetElement.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                      inline: "nearest",
-                    });
-                  }
-                  e.preventDefault();
-                  e.stopPropagation();
+                  CarouselImageScroll(idx, "right");
                 }}
               >
                 ❯

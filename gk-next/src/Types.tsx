@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export type DropdownType = ({
   population,
   handleClick,
@@ -26,15 +28,13 @@ export type ItemsListType = ({
 
 export type GridItemType = ({
   name,
-  link,
-  imageURL,
-  logoURL,
+  imgSrc,
+  logoSrc,
   className,
 }: {
   name: string;
-  link: string;
-  imageURL?: string;
-  logoURL?: string;
+  imgSrc: StaticImageData;
+  logoSrc: StaticImageData;
   className?: string;
 }) => JSX.Element;
 
@@ -75,3 +75,11 @@ export interface Building {
 }
 
 export type TowerApartmentCounts = Record<string, number>;
+
+export type CarouselImage = {
+  src: StaticImageData;
+  alt: string;
+  title?: string | undefined;
+  text?: string | undefined;
+  link?: string | undefined;
+};

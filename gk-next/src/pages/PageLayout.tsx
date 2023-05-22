@@ -6,9 +6,10 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <main className="pt-24">
-        {children} <Footer />
+      <main className="pt-24 overflow-y-auto relative h-auto  w-screen min-h-[calc(100vh-6rem)]">
+        {children}
       </main>
+      <Footer />
       <BackgroundImage />
     </>
   );

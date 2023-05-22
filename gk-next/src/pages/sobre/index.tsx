@@ -1,7 +1,13 @@
 import Image from "next/image";
 import { GKDivider } from "~/components/atoms/GKDivider";
 import PageLayout from "~/pages/PageLayout";
+//@todo - generalize image imports
+import bombinhas1 from "~/assets/about/01-1024x576.jpg";
+import bombinhas2 from "~/assets/about/02-1024x576.jpg";
+import bombinhas3 from "~/assets/about/03-1024x576.jpg";
+import bombinhas4 from "~/assets/about/04-1024x576.jpg";
 
+import { StaticImageData } from "next/image";
 export default function About() {
   return (
     <PageLayout>
@@ -16,7 +22,7 @@ export default function About() {
 
         <article className="mt-10 lg:mt-16 mb-5 w-full flex flex-col mx-auto justify-center">
           <Paragraph
-            img="pages/about/01-1024x576.jpg"
+            img={bombinhas1}
             paragraphs={[
               ` Descendente da parceria com a MHG, a construtora GK é fruto de um
           sonho de dois Engenheiros que uniram seus conhecimentos para assim
@@ -25,7 +31,7 @@ export default function About() {
           />
           <Paragraph
             reverse={true}
-            img="pages/about/02-1024x576.jpg"
+            img={bombinhas2}
             paragraphs={[
               `Elegeram a Cidade de Bombinhas, a Capital do Mergulho, um dos
                   melhores lugares deste Brasil, com 25 praias, como palco para
@@ -34,7 +40,7 @@ export default function About() {
           />
 
           <Paragraph
-            img="pages/about/05-1024x576.jpg"
+            img={bombinhas3}
             paragraphs={[
               `
                   A GK eleva o conceito de viver com sofisticação e investir com
@@ -46,7 +52,7 @@ export default function About() {
 
           <Paragraph
             reverse
-            img="pages/about/06-1024x576.jpg"
+            img={bombinhas4}
             paragraphs={[
               `  A GK empreendimentos é um exemplo de solidez e alto padrão
                   imobiliário no Litoral catarinense e se orgulha em ser
@@ -67,24 +73,21 @@ function Paragraph({
   paragraphs,
   reverse,
 }: {
-  img: string;
+  img: StaticImageData;
   paragraphs: string[];
   reverse?: boolean;
 }) {
   return (
     <div
-      className={`flex justify-center   scroll-snap-center lg:mb-20 ${
+      className={`flex justify-center  scroll-snap-center lg:mb-20 ${
         reverse ? "flex-col lg:flex-row-reverse" : "flex-col lg:flex-row"
       }`}
     >
-      <Image
-        src={img}
-        alt=""
-        className="lg:w-96 lg:h-96 object-cover lg:rounded-xl drop-shadow-md"
-        fill
-      />
+      <div className="w-screen  h-[calc(100vw/2.09)] lg:w-96 lg:h-96 drop-shadow-md">
+        <Image src={img} alt="" className="lg:rounded-xl object-cover" fill />
+      </div>
       <div
-        className={`w-full lg:w-1/2 text-justify items-center flex flex-col justify-center ${
+        className={`w-full lg:w-1/2 text-justify items-center flex flex-col justify-center lg:h-96  ${
           reverse ? "lg:mr-5" : "lg:ml-5"
         }`}
       >

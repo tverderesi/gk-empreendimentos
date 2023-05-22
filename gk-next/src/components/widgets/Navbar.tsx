@@ -1,5 +1,5 @@
 import LogoLetters from "../atoms/LogoLettering";
-
+import { useRouter } from "next/router";
 import { useContext } from "react";
 import AppContext from "../../context/AppContext";
 import { MobileMenu } from "./MobileMenu";
@@ -20,6 +20,10 @@ export function Navbar() {
     dispatch({ type: menuOpen ? "CLOSE_MENU" : "OPEN_MENU" });
   };
 
+  const router = useRouter();
+  const currentAddress = router.asPath;
+  console.log(currentAddress);
+
   return (
     <header className="navbar py-[1rem] fixed  top-0 z-[100] h-24 drop-shadow-xl min-w-[100vw] bg-eerie-black-900/75 backdrop-blur-2xl blur-fallback">
       <a
@@ -30,12 +34,32 @@ export function Navbar() {
       </a>
       <div className="hidden lg:flex justify-center">
         <ul className="menu menu-horizontal p-0 my-auto">
-          <NavItem title="Início" link="/" />
-          <NavItem title="Sobre A GK" link="/sobre" />
-          <NavItem title="Empreendimentos" link="/empreendimentos" />
-          <NavItem title="Contato" link="/contato" />
-          <NavItem title="Oportunidades" link="/Oportunidades" />
-          <NavItem title="Histórico de Obras" link="/historico" />
+          <NavItem title="Início" link="/" currentAddress={currentAddress} />
+          <NavItem
+            title="Sobre A GK"
+            link="/sobre"
+            currentAddress={currentAddress}
+          />
+          <NavItem
+            title="Empreendimentos"
+            link="/empreendimentos"
+            currentAddress={currentAddress}
+          />
+          <NavItem
+            title="Contato"
+            link="/contato"
+            currentAddress={currentAddress}
+          />
+          <NavItem
+            title="Oportunidades"
+            link="/Oportunidades"
+            currentAddress={currentAddress}
+          />
+          <NavItem
+            title="Histórico de Obras"
+            link="/historico"
+            currentAddress={currentAddress}
+          />
         </ul>
       </div>
       <MobileMenu
